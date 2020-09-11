@@ -4,7 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # Output PDFs Folder
-[Oo]utput/*.*
+[Oo]utput/*.pdf
 
 # User-specific files
 *.rsuser

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<document xsi:schemaLocation="http://www.dynamicpdf.com http://www.dynamicpdf.com/schemas/DLEX12.xsd" version="1.2" xmlns="http://www.dynamicpdf.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Document1" author="" keywords="" title="" subject="">
+	<page id="Page1">
+		<recordArea id="RecordArea1" font="Helvetica" x="0" width="512" fontSize="24" align="center" vAlign="bottom" height="66" y="464">
+			<text>This report was created for:
+#ReportCreatedFor#</text>
+		</recordArea>
+		<image id="Image1" angle="0" path="northwind logo.gif" width="191" height="189" x="160.5" y="142"/>
+	</page>
+	<report dataName="Products" id="Report1">
+		<template id="Template1"/><header height="36" id="Header">
+			<recordBox font="HelveticaBold" id="DateRecordBox" x="0" y="0" width="512" height="12" dataFormat="d MMM yyyy h:mm:ss tt" dataName="CurrentDateTime()"/>
+			<label font="HelveticaBold" fontSize="12" id="Label4" x="0" y="0" width="512" height="12" align="center" text="Northwind Product List"/>
+			<pageNumberingLabel font="HelveticaBold" fontSize="12" id="PageNumberingLabel1" x="0" y="0" width="512" height="12" align="right" text="Page %%CP%% of %%TP%%" pageOffset="-1" pageTotalOffset="0"/>
+			<label font="TimesBold" fontSize="11" id="Label1" x="2" y="23" width="236" height="14" text="Product Name"/>
+			<label font="TimesBold" fontSize="11" id="Label2" x="242" y="23" width="156" height="14" text="Qty Per Unit"/>
+			<label font="TimesBold" fontSize="11" id="Label3" x="402" y="23" width="108" height="14" align="right" text="Unit Price"/>
+			<line id="Line1" x1="0" y1="36" x2="512" y2="36"/>
+		</header>
+		<detail height="18" id="Body">
+			<recordBox font="TimesRoman" fontSize="11" id="RecordBox1" x="2" y="3" width="236" height="14" dataFormat="" dataName="ProductName"/>
+			<recordBox font="TimesRoman" fontSize="11" id="RecordBox2" x="242" y="3" width="156" height="14" dataFormat="" dataName="QuantityPerUnit"/>
+			<recordBox font="TimesRoman" fontSize="11" id="RecordBox3" x="402" y="3" width="108" height="14" align="right" dataFormat="0.00##" dataName="UnitPrice"/>
+		</detail>
+		<footer id="Footer"/>
+	</report>
+</document>

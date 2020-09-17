@@ -31,8 +31,8 @@ namespace DynamicPDFCoreSuite.Examples
             MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/DocumentA.pdf"));
             
             Aes256Security security = new Aes256Security("OwnerPassword", "UserPassword");
-            security.AllowAccessibility = true;
-            security.AllowFormFilling = false;
+            security.AllowCopy = false;
+            security.AllowPrint = false;
             document.Security = security;
             
             document.Draw(Util.GetPath("Output/EncryptExistingPDF.pdf"));

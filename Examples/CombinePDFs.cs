@@ -20,10 +20,10 @@ namespace DynamicPDFCoreSuite.Examples
 
         public static void CombinePDFWithOptions()
         {
-            MergeOptions options = MergeOptions.Append;
-            options.Outlines = false;
+            MergeOptions options = MergeOptions.All;
+            options.DocumentProperties = false;
             MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/DocumentA.pdf"), options);
-            document.Append(Util.GetPath("Resources/PDFs/DocumentB.pdf"), options);
+            document.Append(Util.GetPath("Resources/PDFs/DocumentB.pdf"));
             document.Draw(Util.GetPath("Output/CombinePDFWithOptions.pdf"));
         }
     }

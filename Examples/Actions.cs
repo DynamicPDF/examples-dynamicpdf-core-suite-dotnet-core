@@ -11,6 +11,8 @@ namespace DynamicPDFCoreSuite.Examples
             GoToAction();
             ResetAction();
             SubmitAction();
+            UrlAction();
+            FileOpenAction();
         }
 
         public static void GoToAction()
@@ -67,9 +69,15 @@ namespace DynamicPDFCoreSuite.Examples
             Page page = new Page();
             document.Pages.Add(page);
 
-            UrlAction action = new UrlAction("http://www.mydomain.com");
-            Link link = new Link(50, 50, Font.Helvetica.GetTextWidth("My Domain", 18), 20, action);
+            Font font = Font.TimesRoman;
+            string text = "This is a link to DynamicPDF.com.";
+          
+            Label label = new Label(text, 50, 20, 215, 80, font, 12, RgbColor.Blue);
+            label.Underline = true;
+            Link link = new Link(50, 20, font.GetTextWidth(text, 12),
+                12 - font.GetDescender(12), new UrlAction("http://www.dynamicpdf.com"));   
 
+            page.Elements.Add(label);
             page.Elements.Add(link);
             document.Draw(Util.GetPath("Output/UrlAction.pdf"));
         }
@@ -82,7 +90,7 @@ namespace DynamicPDFCoreSuite.Examples
 
             Button button = new Button("btn", 50, 150, 100, 30);
             button.Label = "Click Here";
-            FileOpenAction action = new FileOpenAction(@"Path of the file to open", FileLaunchMode.NewWindow);
+            FileOpenAction action = new FileOpenAction(Util.GetPath("Output/UrlAction.pdf"), FileLaunchMode.NewWindow);
             button.ReaderEvents.MouseUp = action;
             
             page.Elements.Add(button);

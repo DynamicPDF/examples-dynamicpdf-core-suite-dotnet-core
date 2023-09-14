@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="10.35.0" />
+    <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.9.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 

@@ -26,6 +26,8 @@ namespace DynamicPDFCoreSuite
             Examples.AddTemplateExample.Run();
             Examples.TaggedPdfExample.Run();
             Examples.ImageStampExample.Run();
+            Examples.AddShapeExample.Run();
+            Examples.SectionsExample.Run();
 
             // Output files are saved to the Output folder
         }

@@ -17,6 +17,9 @@ namespace DynamicPDFCoreSuite
             Examples.PasswordProtectPDF.Run();
             Examples.SplitPDF.Run();
             Examples.TiffToPDF.Run();
+            Examples.FontKerning.Run();
+            Examples.XmpMetadataExample.Run();
+            Examples.WatermarkExample.Run();
 
             // Output files are saved to the Output folder
         }

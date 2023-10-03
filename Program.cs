@@ -20,6 +20,9 @@ namespace DynamicPDFCoreSuite
             Examples.FontKerning.Run();
             Examples.XmpMetadataExample.Run();
             Examples.WatermarkExample.Run();
+            Examples.TiffToPdfExample.Run();
+            Examples.TextEncodingExample.Run();
+            Examples.TextFormattingExample.Run();
 
             // Output files are saved to the Output folder
         }

@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ceTe.DynamicPDF.Converter.NET" Version="3.22.0" />
     <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.10.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

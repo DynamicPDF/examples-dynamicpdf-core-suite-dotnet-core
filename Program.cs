@@ -39,6 +39,7 @@ namespace DynamicPDFCoreSuite
             Examples.JavascriptActionExample.Run();
             Examples.HtmlAreaExample.Run();
             Examples.GroupingExample.Run();
+            Examples.DiskBufferingExample.Run();
 
             // Output files are saved to the Output folder
         }

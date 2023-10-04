@@ -28,6 +28,15 @@ namespace DynamicPDFCoreSuite
             Examples.ImageStampExample.Run();
             Examples.AddShapeExample.Run();
             Examples.SectionsExample.Run();
+            Examples.ReaderEventExample.Run();
+            Examples.PdfXCompatibleExample.Run();
+            //Examples.PdfACompatibleExample.Run();
+            Examples.PackagePdfExample.Run();
+            Examples.AddNewContentExample.Run();
+            Examples.ListsExamples.Run();
+            Examples.PageLinkExample.Run();
+            Examples.LayoutGridExample.Run();
+            Examples.JavascriptActionExample.Run();
 
             // Output files are saved to the Output folder
         }

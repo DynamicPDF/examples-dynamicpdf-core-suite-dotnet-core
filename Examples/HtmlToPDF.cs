@@ -1,5 +1,6 @@
 ﻿using System;
 using ceTe.DynamicPDF;
+using ceTe.DynamicPDF.Conversion;
 
 namespace DynamicPDFCoreSuite.Examples
 {
@@ -7,7 +8,13 @@ namespace DynamicPDFCoreSuite.Examples
     {
         public static void Run()
         {
-            PageInfo layoutPage = new PageInfo(PageSize.A4, PageOrientation.Portrait);
+            Example();
+            ConverterExample();
+        }
+
+        public static void Example()
+        {
+            PageInfo layoutPage = new PageInfo(ceTe.DynamicPDF.PageSize.A4, ceTe.DynamicPDF.PageOrientation.Portrait);
             Uri uri = new Uri("http://www.google.com");
 
             HtmlLayout html = new HtmlLayout(uri, layoutPage);
@@ -24,5 +31,15 @@ namespace DynamicPDFCoreSuite.Examples
 
             document.Draw(Util.GetPath("Output/HtmlToPDF.pdf"));
         }
+
+        public static void ConverterExample()
+        {
+            HtmlConversionOptions options = new HtmlConversionOptions(false);
+
+            HtmlConverter htmlConverter = new HtmlConverter(new Uri(@"http://en.wikipedia.org"), options);
+
+            htmlConverter.Convert(Util.GetPath("Output/HtmlToPDF_output.pdf"));
+        }
+
     }
 }

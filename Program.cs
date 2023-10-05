@@ -43,6 +43,9 @@ namespace DynamicPDFCoreSuite
             Examples.ChartsExample.Run();
             Examples.BookmarkOutlineExample.Run();
             Examples.AnnotationsExample.Run();
+            Examples.AddImageExample.Run();
+            Examples.AddFormFieldsExample.Run();
+            Examples.BarcodeExample.Run();
 
             // Output files are saved to the Output folder
         }

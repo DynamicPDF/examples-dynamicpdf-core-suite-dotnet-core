@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DynamicPDFCoreSuite.Examples
 {
-    class ListsExamples
+    class ListsExample
     {
         public static void Run()
         {

@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>DynamicPDFCoreSuite</RootNamespace>
     <AssemblyName>DynamicPDFCoreSuite.Examples</AssemblyName>
   </PropertyGroup>
@@ -14,8 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.9.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <None Remove="ceTeLicenseKeys.csl4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ceTe.DynamicPDF.Converter.NET" Version="3.22.0" />
+    <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.10.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

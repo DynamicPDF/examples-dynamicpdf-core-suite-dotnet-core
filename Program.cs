@@ -33,7 +33,7 @@ namespace DynamicPDFCoreSuite
             //Examples.PdfACompatibleExample.Run();
             Examples.PackagePdfExample.Run();
             Examples.AddNewContentExample.Run();
-            Examples.ListsExamples.Run();
+            Examples.ListsExample.Run();
             Examples.PageLinkExample.Run();
             Examples.LayoutGridExample.Run();
             Examples.JavascriptActionExample.Run();

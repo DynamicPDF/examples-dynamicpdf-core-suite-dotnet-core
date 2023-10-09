@@ -29,7 +29,7 @@ namespace DynamicPDFCoreSuite.Examples
 
             Document document = html.Layout();
 
-            document.Draw(Util.GetPath("Output/HtmlToPDF.pdf"));
+            document.Draw(Util.GetPath("Output/HtmlToPdf.pdf"));
         }
 
         public static void ConverterExample()

@@ -46,6 +46,7 @@ namespace DynamicPDFCoreSuite
             Examples.AddImageExample.Run();
             Examples.AddFormFieldsExample.Run();
             Examples.BarcodeExample.Run();
+            Examples.HtmlToPdf.Run();
             Examples.HtmlToPdfByteArrayExample.Run();
 
             // Output files are saved to the Output folder

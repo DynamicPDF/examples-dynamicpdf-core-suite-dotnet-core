@@ -4,7 +4,7 @@ using ceTe.DynamicPDF.Conversion;
 
 namespace DynamicPDFCoreSuite.Examples
 {
-    class HtmlToPDF
+    class HtmlToPdf
     {
         public static void Run()
         {

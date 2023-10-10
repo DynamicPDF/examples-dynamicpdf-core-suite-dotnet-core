@@ -6,14 +6,15 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
+            Examples.FormFlatteningExample.Run();
+            Examples.GenerateReportExample.Run();
             Examples.ReadFormFieldsExample.Run();
             Examples.FormFieldsReadOnly.Run();
 
-           /* Examples.AcroFormFilling.Run();
+            Examples.AcroFormFilling.Run();
             Examples.Actions.Run();
             Examples.CombinePDFs.Run();
             Examples.CreatePDF.Run();
-            Examples.CreatePDFReport.Run();
             Examples.EncryptPDF.Run();
             Examples.MergePDFs.Run();
             Examples.PageNumbers.Run();
@@ -51,7 +52,6 @@ namespace DynamicPDFCoreSuite
             Examples.BarcodeExample.Run();
             Examples.HtmlToPdf.Run();
             Examples.HtmlToPdfByteArrayExample.Run();
-           */
 
             // Output files are saved to the Output folder
         }

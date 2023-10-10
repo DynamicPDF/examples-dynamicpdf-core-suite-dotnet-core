@@ -6,7 +6,10 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
-            Examples.AcroFormFilling.Run();
+            Examples.ReadFormFieldsExample.Run();
+            Examples.FormFieldsReadOnly.Run();
+
+           /* Examples.AcroFormFilling.Run();
             Examples.Actions.Run();
             Examples.CombinePDFs.Run();
             Examples.CreatePDF.Run();
@@ -48,6 +51,7 @@ namespace DynamicPDFCoreSuite
             Examples.BarcodeExample.Run();
             Examples.HtmlToPdf.Run();
             Examples.HtmlToPdfByteArrayExample.Run();
+           */
 
             // Output files are saved to the Output folder
         }

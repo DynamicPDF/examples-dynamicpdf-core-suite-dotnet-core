@@ -6,9 +6,10 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
-           // Examples.ExcelToPdfExample.Run();
-           // Examples.PowerpointToPdfExample.Run();
-            Examples.WordToPdfExample.Run();
+            // Examples.ExcelToPdfExample.Run();
+            // Examples.PowerpointToPdfExample.Run();
+            // Examples.WordToPdfExample.Run();
+            Examples.PdfToImageRasterizerExample.Run();
 
          /*   Examples.FormFlatteningExample.Run();
             Examples.GenerateReportExample.Run();

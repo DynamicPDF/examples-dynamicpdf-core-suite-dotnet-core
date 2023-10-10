@@ -1,25 +1,29 @@
-﻿using System.IO;
+﻿
+
 using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.LayoutEngine;
-
 using Newtonsoft.Json;
+using System.IO;
 
 namespace DynamicPDFCoreSuite.Examples
 {
-    class CreatePDFReport
+    class GenerateReportExample
     {
+
         public static void Run()
         {
-            var jsonData = JsonConvert.DeserializeObject(File.ReadAllText(Util.GetPath("Resources/Data/SimpleReportData.json")));
-            
-            DocumentLayout layoutReport = new DocumentLayout(Util.GetPath("Resources/DLEXs/SimpleReportWithCoverPageFromJSON.dlex"));
+            string data = File.ReadAllText(Util.GetPath("Resources/Data/SimpleReportWithCoverPage.json"));
+            var jsonData = JsonConvert.DeserializeObject(data);
+
+            DocumentLayout layoutReport = new DocumentLayout(Util.GetPath("Resources/DLEXs/SimpleReportWithCoverPage.dlex"));
 
             NameValueLayoutData layoutData = new NameValueLayoutData();
             layoutData.Add("ReportCreatedFor", "Alex Smith");
             layoutData.Add("Products", jsonData);
 
             Document document = layoutReport.Layout(layoutData);
-            document.Draw(Util.GetPath("Output/SimpleReportWithCoverPageFromJSON.pdf"));
+            document.Draw(Util.GetPath("Output/report-output-example.pdf"));
         }
+
     }
 }

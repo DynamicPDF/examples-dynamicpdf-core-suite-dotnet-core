@@ -6,7 +6,12 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
-            Examples.FormFlatteningExample.Run();
+            // Examples.ExcelToPdfExample.Run();
+            // Examples.PowerpointToPdfExample.Run();
+            // Examples.WordToPdfExample.Run();
+            Examples.PdfToImageRasterizerExample.Run();
+
+         /*   Examples.FormFlatteningExample.Run();
             Examples.GenerateReportExample.Run();
             Examples.ReadFormFieldsExample.Run();
             Examples.FormFieldsReadOnly.Run();
@@ -51,7 +56,7 @@ namespace DynamicPDFCoreSuite
             Examples.AddFormFieldsExample.Run();
             Examples.BarcodeExample.Run();
             Examples.HtmlToPdf.Run();
-            Examples.HtmlToPdfByteArrayExample.Run();
+            Examples.HtmlToPdfByteArrayExample.Run(); */
 
             // Output files are saved to the Output folder
         }

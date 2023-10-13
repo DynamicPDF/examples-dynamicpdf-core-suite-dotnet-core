@@ -3,7 +3,7 @@ using ceTe.DynamicPDF.Merger;
 
 namespace DynamicPDFCoreSuite.Examples
 {
-    class FormsFieldsReadOnly
+    class FormFieldsReadOnly
     {
 
         public static void Run()

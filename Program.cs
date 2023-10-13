@@ -14,7 +14,7 @@ namespace DynamicPDFCoreSuite
             Examples.FormFlatteningExample.Run();
             Examples.GenerateReportExample.Run();
             Examples.ReadFormFieldsExample.Run();
-            Examples.FormFieldsReadOnly.Run();
+            Examples.FormsFieldsReadOnly.Run();
 
             Examples.AcroFormFilling.Run();
             Examples.Actions.Run();

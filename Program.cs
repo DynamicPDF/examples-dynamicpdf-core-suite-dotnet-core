@@ -6,6 +6,7 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
+            Examples.HtmlToPdf.Run();
             Examples.FormFlatteningExample.Run();
             Examples.GenerateReportExample.Run();
             Examples.ReadFormFieldsExample.Run();

@@ -6,6 +6,11 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
+            Examples.RetrievingFormFieldsExample.Run();
+            Examples.FontsExample.Run();
+            Examples.DigitalSignatureExample.Run();
+            Examples.CertificateExample.Run();
+            Examples.AddSignatureExample.Run();
             Examples.HtmlToPdf.Run();
             Examples.FormFlatteningExample.Run();
             Examples.GenerateReportExample.Run();

@@ -6,7 +6,11 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
-            Examples.HtmlToPdf.Run();
+            Examples.FontsExample.Run();
+            //Examples.DigitalSignatureExample.Run();
+            //Examples.CertificateExample.Run();
+            //Examples.AddSignatureExample.Run();
+/*            Examples.HtmlToPdf.Run();
             Examples.FormFlatteningExample.Run();
             Examples.GenerateReportExample.Run();
             Examples.ReadFormFieldsExample.Run();
@@ -50,7 +54,7 @@ namespace DynamicPDFCoreSuite
             Examples.AddImageExample.Run();
             Examples.AddFormFieldsExample.Run();
             Examples.BarcodeExample.Run();
-
+*/
 
             // Output files are saved to the Output folder
         }

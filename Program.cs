@@ -6,7 +6,8 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
-            Examples.RetrievingFormFieldsExample.Run();
+            Examples.LayoutEngineExample.Run();
+           /* Examples.RetrievingFormFieldsExample.Run();
             Examples.FontsExample.Run();
             Examples.DigitalSignatureExample.Run();
             Examples.CertificateExample.Run();
@@ -37,10 +38,10 @@ namespace DynamicPDFCoreSuite
             Examples.ImageStampExample.Run();
             Examples.AddShapeExample.Run();
             Examples.SectionsExample.Run();
-            Examples.ReaderEventExample.Run();
-            Examples.PdfXCompatibleExample.Run();
-            //Examples.PdfACompatibleExample.Run();
-            Examples.PackagePdfExample.Run();
+            Examples.ReaderEventExample.Run(); */
+           // Examples.PdfXCompatibleExample.Run();
+           // Examples.PdfACompatibleExample.Run();
+            /*Examples.PackagePdfExample.Run();
             Examples.AddNewContentExample.Run();
             Examples.ListsExample.Run();
             Examples.PageLinkExample.Run();
@@ -54,7 +55,7 @@ namespace DynamicPDFCoreSuite
             Examples.AnnotationsExample.Run();
             Examples.AddImageExample.Run();
             Examples.AddFormFieldsExample.Run();
-            Examples.BarcodeExample.Run();
+            Examples.BarcodeExample.Run(); */
 
 
             // Output files are saved to the Output folder

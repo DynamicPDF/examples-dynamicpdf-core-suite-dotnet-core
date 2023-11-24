@@ -7,7 +7,7 @@ namespace DynamicPDFCoreSuite
         static void Main(string[] args)
         {
             Examples.LayoutEngineExample.Run();
-           /* Examples.RetrievingFormFieldsExample.Run();
+            Examples.RetrievingFormFieldsExample.Run();
             Examples.FontsExample.Run();
             Examples.DigitalSignatureExample.Run();
             Examples.CertificateExample.Run();
@@ -38,10 +38,10 @@ namespace DynamicPDFCoreSuite
             Examples.ImageStampExample.Run();
             Examples.AddShapeExample.Run();
             Examples.SectionsExample.Run();
-            Examples.ReaderEventExample.Run(); */
-           // Examples.PdfXCompatibleExample.Run();
-           // Examples.PdfACompatibleExample.Run();
-            /*Examples.PackagePdfExample.Run();
+            Examples.ReaderEventExample.Run();
+            //Examples.PdfXCompatibleExample.Run();
+            //Examples.PdfACompatibleExample.Run();
+            Examples.PackagePdfExample.Run();
             Examples.AddNewContentExample.Run();
             Examples.ListsExample.Run();
             Examples.PageLinkExample.Run();

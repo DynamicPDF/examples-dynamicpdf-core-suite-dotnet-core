@@ -3,12 +3,30 @@ using ceTe.DynamicPDF.LayoutEngine;
 using ceTe.DynamicPDF.LayoutEngine.Data;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Text;
 
 namespace DynamicPDFCoreSuite.Examples
 {
+    class Category
+    {
+        public string Name;
+        public List<Product> Products;
+    }
+
+    class Product
+    {
+        public int ProductID;
+        public string ProductName;
+        public string QuantityPerUnit;
+        public Boolean Discontinued;
+        public double UnitPrice;
+    }
+
+
     class LayoutEngineExample
     {
         static string CONNECTION_STRING = "Data Source=(local);Initial Catalog=Northwind;Integrated Security=true";
@@ -23,12 +41,12 @@ namespace DynamicPDFCoreSuite.Examples
             // 1. JSON document
             // 2. Obtain data from database and then convert to JSON
             // 3. Obtain data from database and programatically use data
-            // 4. Obtain data from a simple business model
+            // 4. Obtain data from a name values
 
             JsonVersion(dlexString, jsonString);
             DatabaseVersionWithJson(dlexString);
             DatabaseVersionSql(dlexString);
-            BusinessObjectExample(dlexString);
+            NameValuesExample(dlexString);
 
         }
 
@@ -132,11 +150,40 @@ namespace DynamicPDFCoreSuite.Examples
             }
         }
 
-        private static void BusinessObjectExample(String dlexString)
+
+        //Create a PDF using data from data model.
+
+        private static void NameValuesExample(String dlexString)
         {
-            
+            // Create the document's layout from a DLEX template
+            DocumentLayout documentLayout = new DocumentLayout(dlexString);
+
+            List<Category> productsByCategory = new List<Category>();
+            Category a = new Category
+            {
+                Name = "Beverages",
+                Products = new List<Product>() {
+                new Product { ProductID = 1, ProductName = "Chai", QuantityPerUnit = "10 boxes x 20 bags", Discontinued = false, UnitPrice = 12.22},
+                new Product { ProductID = 2, ProductName = "Chang", QuantityPerUnit = "5 boxes x 10 bags", Discontinued = true, UnitPrice = 9.99} }
+            };
+
+            Category b = new Category
+            {
+                Name = "Condiments",
+                Products = new List<Product>() {
+                new Product { ProductID = 3, ProductName = "Aniseed Syrup", QuantityPerUnit = "20 boxes x 2 bottles", Discontinued = true, UnitPrice = 3.92},
+                new Product { ProductID = 4, ProductName = "Chef Anton's Cajun Seasoning", QuantityPerUnit = "10 boxes x 10 containers", Discontinued = false, UnitPrice = 3.23} }
+            };
+
+            productsByCategory.Add(a);
+            productsByCategory.Add(b);
+
+            LayoutData layoutData = new LayoutData();
+            layoutData.Add("ProductsByCategory", productsByCategory);
+
+            // Layout the document and save the PDF
+            Document document = documentLayout.Layout(layoutData);
+            document.Draw(Util.GetPath("Output/subreport_db_object_output.pdf"));
         }
-
-
     }
 }

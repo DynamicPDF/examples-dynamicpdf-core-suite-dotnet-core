@@ -18,7 +18,10 @@ namespace DynamicPDFCoreSuite.Examples
         {
             Document document = new Document();
             document.Title = "PDF/A1 Document";
- 
+            document.Subject = "Document's Subject";
+            document.Tag = new TagOptions();
+            document.Author = "Andy";
+
             XmpMetadata xmp = new XmpMetadata();
 
             PdfASchema pdfaschema = new PdfASchema(PdfAStandard.PDF_A_1a_2005);
@@ -44,13 +47,20 @@ namespace DynamicPDFCoreSuite.Examples
             document.Pages.Add(page);
 
             document.Draw(Util.GetPath("Output/pdfa-one-output.pdf"));
+
+            
+            
         }
 
         public static void ExampleTwo()
         {
             Document document = new Document();
             document.Title = "PDF/A1 Document";
-      
+            document.Title = "PDF/A1 Document";
+            document.Subject = "Document's Subject";
+            document.Tag = new TagOptions();
+            document.Author = "Andy";
+
             XmpMetadata xmp = new XmpMetadata();
 
             PdfASchema pdfaschema = new PdfASchema(PdfAStandard.PdfA3a);
@@ -74,7 +84,7 @@ namespace DynamicPDFCoreSuite.Examples
             embeddedFile1.MimeType = "application/excel";
             document.EmbeddedFiles.Add(embeddedFile1);
 
-            EmbeddedFile embeddedFile2 = new EmbeddedFile(Util.GetPath("Resources/Data/Simple.xml"));
+            EmbeddedFile embeddedFile2 = new EmbeddedFile(Util.GetPath("Resources/Data/simple.xml"));
             embeddedFile2.Relation = EmbeddedFileRelation.Source;
             embeddedFile2.MimeType = "application/xml";
             document.EmbeddedFiles.Add(embeddedFile2);

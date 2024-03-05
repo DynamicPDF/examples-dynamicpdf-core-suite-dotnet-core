@@ -39,8 +39,8 @@ namespace DynamicPDFCoreSuite
             Examples.AddShapeExample.Run();
             Examples.SectionsExample.Run();
             Examples.ReaderEventExample.Run();
-            //Examples.PdfXCompatibleExample.Run();
-            //Examples.PdfACompatibleExample.Run();
+            Examples.PdfXCompatibleExample.Run();
+            Examples.PdfACompatibleExample.Run();
             Examples.PackagePdfExample.Run();
             Examples.AddNewContentExample.Run();
             Examples.ListsExample.Run();
@@ -55,7 +55,7 @@ namespace DynamicPDFCoreSuite
             Examples.AnnotationsExample.Run();
             Examples.AddImageExample.Run();
             Examples.AddFormFieldsExample.Run();
-            Examples.BarcodeExample.Run(); */
+            Examples.BarcodeExample.Run();
 
 
             // Output files are saved to the Output folder

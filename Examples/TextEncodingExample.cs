@@ -19,7 +19,7 @@ namespace DynamicPDFCoreSuite.Examples
             Font centralEuropeHelveticaFont = new Helvetica(Encoder.CentralEurope);
             page.Elements.Add(new TextArea("Text", 0, 0, 200, 12, centralEuropeHelveticaFont, 12));
 
-            document.Draw(Util.GetPath("Output/text-encoding-exampleOne-pdf"));
+            document.Draw(Util.GetPath("Output/text-encoding-exampleOne.pdf"));
         }
 
     }

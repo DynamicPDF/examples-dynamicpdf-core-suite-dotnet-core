@@ -27,7 +27,7 @@ namespace DynamicPDFCoreSuite.Examples
 
             page.Elements.Add(textArea);
 
-            document.Draw(Util.GetPath("Output/text-area-example-pdf"));
+            document.Draw(Util.GetPath("Output/text-area-example.pdf"));
         }
 
         public static void FormattedTextAreaExample()
@@ -59,7 +59,7 @@ namespace DynamicPDFCoreSuite.Examples
             page.Elements.Add(formattedTextArea);
 
             // Save the PDF
-            document.Draw(Util.GetPath("Output/formatted-text-area-example-pdf"));
+            document.Draw(Util.GetPath("Output/formatted-text-area-example.pdf"));
         }
 
 

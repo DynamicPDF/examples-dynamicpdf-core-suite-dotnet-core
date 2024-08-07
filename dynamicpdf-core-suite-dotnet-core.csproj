@@ -7,11 +7,6 @@
     <AssemblyName>DynamicPDFCoreSuite.Examples</AssemblyName>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Output\**" />
-    <EmbeddedResource Remove="Output\**" />
-    <None Remove="Output\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Remove="ceTeLicenseKeys.csl4" />
@@ -21,6 +16,10 @@
     <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.15.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Output\" />
   </ItemGroup>
 
 </Project>

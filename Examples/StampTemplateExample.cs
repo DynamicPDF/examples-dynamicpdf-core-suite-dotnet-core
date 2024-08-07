@@ -2,11 +2,6 @@
 using ceTe.DynamicPDF.PageElements;
 using ceTe.DynamicPDF.PageElements.Html;
 using DynamicPDFCoreSuite.Utility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicPDFCoreSuite.Examples
 {

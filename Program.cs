@@ -21,8 +21,6 @@ namespace DynamicPDFCoreSuite
             //Examples.GenerateReportExample.Run();
             //Examples.ReadFormFieldsExample.Run();
             //Examples.FormFieldsReadOnly.Run();
-
-
             //Examples.AcroFormFilling.Run();
             //Examples.Actions.Run();
             //Examples.CombinePDFs.Run();

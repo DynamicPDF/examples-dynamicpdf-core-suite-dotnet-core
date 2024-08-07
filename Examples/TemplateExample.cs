@@ -25,7 +25,7 @@ namespace DynamicPDFCoreSuite.Examples
             tmp.Elements.Add(new Label("Test.", 200, 300, 200, 0));
             doc.Template = tmp;
 
-            doc.Draw(Util.GetPath("Output/AddTemplateToPDF.pdf"));
+            doc.Draw(Util.GetPath("Output/addtemplatetopdf-out.pdf"));
         }
     }
 }

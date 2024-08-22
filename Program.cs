@@ -1,5 +1,4 @@
 ﻿using DynamicPDFCoreSuite.Examples;
-using System;
 
 namespace DynamicPDFCoreSuite
 {
@@ -7,9 +6,20 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
+
+
             Util.CreatePath("Output");
+            Examples.Image3dExample.Run();
+            Examples.HtmlLayoutExample.Run();
+            Examples.ListContinuationExample.Run();
+            Examples.TextContinuationExample.Run();
+            Examples.DocumentSectioningExample.Run();
             Examples.TemplateExample.Run();
             Examples.EvenOddTemplateExample.Run();
+            Examples.StampTemplateExample.Run();
+            Examples.HeaderFooterTemplateExample.Run();
+            Examples.HtmlAreaExample.Run();
+            Examples.FormattedTextAreaExample.Run();
             //Examples.LayoutEngineExample.Run();
             //Examples.RetrievingFormFieldsExample.Run();
             //Examples.FontsExample.Run();

@@ -12,7 +12,7 @@ namespace DynamicPDFCoreSuite.Examples
             Page page = new Page(PageSize.Letter, PageOrientation.Portrait, 54.0f);
             document.Pages.Add(page);
             
-            string labelText = "Hello World...\nFrom DynamicPDF Generator for .NET\nDynamicPDF.com";
+            string labelText = "Hello World...\nFrom DynamicPDF Core Suite for .NET\nDynamicPDF.com";
             Label label = new Label(labelText, 0, 0, 504, 100, Font.Helvetica, 18, TextAlign.Center);
             page.Elements.Add(label);
             

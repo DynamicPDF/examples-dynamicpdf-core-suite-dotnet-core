@@ -1,10 +1,5 @@
 ﻿using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicPDFCoreSuite.Examples
 {
@@ -20,6 +15,17 @@ namespace DynamicPDFCoreSuite.Examples
         public static void OrderedList()
         {
             Document document = new Document();
+
+            document.Pages.Add(new Page(PageSize.Letter));
+
+            OrderedList listRoman = new OrderedList(50, 50, 300, 500, Font.Courier, 14, NumberingStyle.RomanUpperCase);
+
+            listRoman.Items.Add("Item One");
+            listRoman.Items.Add("Item Two");
+            listRoman.Items.Add("Item Three");
+            listRoman.Items.Add("Item Four");
+
+            document.Pages[0].Elements.Add(listRoman);
 
             Page page = new Page();
 
@@ -88,6 +94,15 @@ namespace DynamicPDFCoreSuite.Examples
             ListItem item8 = subList2.Items.Add("Second level sub-list item 2");
 
             page.Elements.Add(list);
+
+            UnorderedList listCustom = new UnorderedList(50, 250, 300, 500, Font.Courier, 14, new UnorderedListStyle("$", Font.CourierBold));
+
+            listCustom.Items.Add("List item 1");
+            listCustom.Items.Add("List item 2");
+            listCustom.Items.Add("List item 3");
+            listCustom.Items.Add("List item 4");
+
+            page.Elements.Add(listCustom);
 
             document.Pages.Add(page);
 

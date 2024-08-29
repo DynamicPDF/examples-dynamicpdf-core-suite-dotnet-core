@@ -18,6 +18,7 @@ namespace DynamicPDFCoreSuite.Examples
             TableExample.BorderExample();
             TableExample.CompleteExample();
             TableExample.CompleteExampleTwo();
+            TableExample.PageElementsExample();
         }
 
         private static void CompleteExample()
@@ -262,5 +263,80 @@ namespace DynamicPDFCoreSuite.Examples
 
             document.Draw(Util.GetPath("Output/border-table-output.pdf"));
         }
+
+        public static void PageElementsExample()
+        {
+            // Create a PDF Document 
+            Document document = new Document();
+
+            // Create a Page and add it to the document 
+            Page page = new Page();
+            document.Pages.Add(page);
+
+            // create a table
+            Table2 table = new Table2(0, 0, 400, 400);
+            table.CellDefault.Border.Color = RgbColor.Blue;
+            table.CellDefault.Border.LineStyle = LineStyle.Solid;
+            table.CellDefault.Padding.Value = 3.0f;
+
+            // Add columns to the table
+            table.Columns.Add(90);
+            table.Columns.Add(150);
+            table.Columns.Add(110);
+
+            // The first row is used as the table heading
+            Row2 row1 = table.Rows.Add(20, Font.HelveticaBold, 14, RgbColor.Black,
+            RgbColor.Gray);
+            row1.CellDefault.Align = TextAlign.Center;
+            row1.CellDefault.VAlign = VAlign.Center;
+            row1.Cells.Add("Page Element", 3);
+
+            // The second row is the column headings
+            Row2 row2 = table.Rows.Add(Font.HelveticaBoldOblique, 12);
+            row2.CellDefault.Align = TextAlign.Center;
+            row2.Cells.Add("Name");
+            row2.Cells.Add("Element");
+            row2.Cells.Add("Implements IArea");
+
+            // Add IArea page elements directly to the cell
+            Row2 row3 = table.Rows.Add(30);
+            row3.Cells.Add("FormattedTextArea");
+            row3.CellDefault.Border.Color = RgbColor.Green;
+
+            string formattedText = "<font face=" + "Times" + ">This is a formatted text area. font face,</font> <font size=" + "0/>color,</font> <b>bold.</b>";
+            row3.Cells.Add(new FormattedTextArea(formattedText, 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
+            
+            Cell2 cell1 = row3.Cells.Add("YES");
+            cell1.Align = TextAlign.Center;
+            cell1.VAlign = VAlign.Center;
+
+            // Add page elemnts (Lines) to a cell using the AreaGroup
+            Row2 row4 = table.Rows.Add(30);
+            row4.Cells.Add("Line");
+            AreaGroup lineGroup = new AreaGroup(150, 150);
+            lineGroup.Add(new Line(25, 25, 125, 125, 5));
+            lineGroup.Add(new Line(25, 125, 125, 25, 5));
+            row4.Cells.Add(lineGroup);
+            Cell2 cell2 = row4.Cells.Add("NO");
+            cell2.Align = TextAlign.Center;
+            cell2.VAlign = VAlign.Center;
+
+            //add image to table
+
+            Row2 row5 = table.Rows.Add(30);
+            row5.Cells.Add("Image");
+            Image img = new(Util.GetPath("Resources/Images/") + "DPDFLogo.png", 0,0);
+            row5.Cells.Add(img);
+            Cell2 cell3 = row5.Cells.Add("YES");
+            cell3.Align = TextAlign.Center;
+            cell3.VAlign = VAlign.Center;
+
+            // Add the table to the page
+            page.Elements.Add(table);
+            // Save the PDF 
+
+            document.Draw(Util.GetPath("Output/table-page-elements-output.pdf"));
+        }
+
     }
 }

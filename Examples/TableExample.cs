@@ -12,6 +12,8 @@ namespace DynamicPDFCoreSuite.Examples
     {
         public static void Run()
         {
+            TableExample.SimpleTable();
+
             Document document = new Document();
 
             Page page = new Page();
@@ -61,6 +63,35 @@ namespace DynamicPDFCoreSuite.Examples
             page.Elements.Add(table);
 
             document.Draw(Util.GetPath("Output/table-output.pdf"));
+        }
+
+        private static void SimpleTable()
+        {
+            Document document = new Document();
+
+            Page page = new Page();
+            document.Pages.Add(page);
+
+            // Create a table 
+            Table2 table = new Table2(0, 0, 600, 600);
+
+            //Add two columns to the table
+            table.Columns.Add(150);
+            table.Columns.Add(90);
+
+            // Add two rows to the table
+            Row2 row1 = table.Rows.Add(40);
+            Row2 row2 = table.Rows.Add(30);
+
+            row1.Cells.Add("A1");
+            row1.Cells.Add("A2");
+
+            row2.Cells.Add("B1");
+            row2.Cells.Add("B2");
+
+            page.Elements.Add(table);
+
+            document.Draw(Util.GetPath("Output/simple-table-output.pdf"));
         }
     }
 }

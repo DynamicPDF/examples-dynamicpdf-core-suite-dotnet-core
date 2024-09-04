@@ -98,7 +98,6 @@ namespace DynamicPDFCoreSuite.Examples
             barSeries3.Values.Add(new float[] { 2, 4, 6, 9 });
 
             chart.AutoLayout = false;
-            chart.Layout();
             chart.Legends[0].X = 20;
             chart.Legends[0].Y = 75;
             chart.Legends[0].BackgroundColor = RgbColor.Tan;

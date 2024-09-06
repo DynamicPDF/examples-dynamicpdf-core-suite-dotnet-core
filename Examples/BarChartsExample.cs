@@ -25,6 +25,18 @@ namespace DynamicPDFCoreSuite.Examples
             document.Pages.Add(page);
 
             Chart chart = new Chart(0, 0, 400, 200);
+            Title topTitle = new Title("DynamicPDF Item Report");
+            topTitle.FontSize = 24;
+            Title subTitle = new Title("For the 2024 Calendar Year.");
+            Title bottomTitle = new Title("Produced by CeTe 2024");
+            bottomTitle.FontSize = 6;
+
+
+
+            chart.HeaderTitles.Add(topTitle);
+            chart.HeaderTitles.Add(subTitle);
+            chart.FooterTitles.Add(bottomTitle);
+
             chart.BackgroundColor = RgbColor.AliceBlue;
             chart.PrimaryPlotArea.BackgroundColor = RgbColor.Gray;
             IndexedBarSeries barSeries1 = new IndexedBarSeries("Item A");
@@ -38,6 +50,13 @@ namespace DynamicPDFCoreSuite.Examples
             barSeries3.Values.Add(new float[] { 2, 4, 6, 9 });
 
             chart.Legends[0].BackgroundColor = RgbColor.Tan;
+
+            Title title = new Title("Item Count");
+            title.FontSize = 8;
+            Title title2 = new Title("In thousands of items.");
+            title2.FontSize = 8;
+            chart.PrimaryPlotArea.TopTitles.Add(title);
+            chart.PrimaryPlotArea.BottomTitles.Add(title2);
 
             page.Elements.Add(chart);
             document.Draw(Util.GetPath("Output/barchart-simple-output.pdf"));
@@ -129,6 +148,7 @@ namespace DynamicPDFCoreSuite.Examples
 
             PlotArea plotArea1 = chart.PlotAreas.Add(50, 10, 150, 200);
             PlotArea plotArea2 = chart.PlotAreas.Add(250, 10, 150, 200);
+        
 
             IndexedBarSeries barSeries1 = new IndexedBarSeries("Item A");
             plotArea1.Series.Add(barSeries1);

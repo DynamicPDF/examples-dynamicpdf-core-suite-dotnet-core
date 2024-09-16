@@ -3,6 +3,7 @@ using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements.Charting;
 using ceTe.DynamicPDF.PageElements.Charting.Axes;
 using ceTe.DynamicPDF.PageElements.Charting.Series;
+using System;
 
 namespace DynamicPDFCoreSuite.Examples
 {
@@ -14,9 +15,195 @@ namespace DynamicPDFCoreSuite.Examples
             SimpleBarChartIndexedAxis();
             SimpleBarChartManualLayout();
             SimpleDoubleBarChart();
-
+            DateTimeStacked();
+            DateTime();
+            BarStacked100Example();
 
         }
+
+        public static void DateTime()
+        {
+            string outputPath = Util.GetPath("Output/barchart-datetime-output.pdf");
+            // Create a PDF Document
+            Document document = new Document();
+
+            // Create a Page and add it to the document
+            Page page = new Page();
+            document.Pages.Add(page);
+
+            // Create a chart
+            Chart chart = new Chart(0, 0, 400, 200);
+
+            //Get the default plot area from the chart
+            PlotArea plotArea = chart.PrimaryPlotArea;
+
+            // Create header titles and add it to the chart
+            Title title1 = new Title("Website Visitors");
+            Title title2 = new Title("Year - 2007");
+            chart.HeaderTitles.Add(title1);
+            chart.HeaderTitles.Add(title2);
+
+            // Create a date time bar series and add values to it
+            DateTimeBarSeries barSeries1 = new DateTimeBarSeries("Website A");
+            barSeries1.Values.Add(5, new DateTime(2007, 1, 1));
+            barSeries1.Values.Add(7, new DateTime(2007, 2, 1));
+            barSeries1.Values.Add(9, new DateTime(2007, 3, 1));
+            barSeries1.Values.Add(6, new DateTime(2007, 4, 1));
+            DateTimeBarSeries barSeries2 = new DateTimeBarSeries("Website B");
+            barSeries2.Values.Add(4, new DateTime(2007, 1, 1));
+            barSeries2.Values.Add(2, new DateTime(2007, 2, 1));
+            barSeries2.Values.Add(5, new DateTime(2007, 3, 1));
+            barSeries2.Values.Add(8, new DateTime(2007, 4, 1));
+            DateTimeBarSeries barSeries3 = new DateTimeBarSeries("Website C");
+            barSeries3.Values.Add(2, new DateTime(2007, 1, 1));
+            barSeries3.Values.Add(4, new DateTime(2007, 2, 1));
+            barSeries3.Values.Add(6, new DateTime(2007, 3, 1));
+            barSeries3.Values.Add(9, new DateTime(2007, 4, 1));
+
+            // Add date time bar series to the plot area
+            plotArea.Series.Add(barSeries1);
+            plotArea.Series.Add(barSeries2);
+            plotArea.Series.Add(barSeries3);
+
+            // Create a title and add it to the XAxis
+            Title title3 = new Title("Viewers (in millions)");
+            barSeries1.XAxis.Titles.Add(title3);
+
+            // set label  format for the axis labels
+            barSeries1.YAxis.LabelFormat = "MMM";
+
+            // Add the chart to the page
+            page.Elements.Add(chart);
+
+            // Save the PDF
+            document.Draw(outputPath);
+        }
+
+
+        public static void DateTimeStacked()
+        {
+            string outputPath = Util.GetPath("Output/barchart-stacked-datetime-output.pdf");
+            // Create a PDF Document
+            Document document = new Document();
+
+            // Create a Page and add it to the document
+            Page page = new Page();
+            document.Pages.Add(page);
+
+            // Create a chart
+            Chart chart = new Chart(0, 0, 400, 200);
+
+            // Get the default plot area from the chart
+            PlotArea plotArea = chart.PrimaryPlotArea;
+
+            // Create header titles and add it to the chart
+            Title title1 = new Title("Website Visitors");
+            Title title2 = new Title("Year - 2007");
+            chart.HeaderTitles.Add(title1);
+            chart.HeaderTitles.Add(title2);
+
+            // Create a date time stacked bar series element and add values to it
+            DateTimeStackedBarSeriesElement seriesElement1 = new DateTimeStackedBarSeriesElement("Website A");
+            seriesElement1.Values.Add(5, new DateTime(2007, 1, 1));
+            seriesElement1.Values.Add(7, new DateTime(2007, 2, 1));
+            seriesElement1.Values.Add(9, new DateTime(2007, 3, 1));
+            seriesElement1.Values.Add(6, new DateTime(2007, 4, 1));
+            DateTimeStackedBarSeriesElement seriesElement2 = new DateTimeStackedBarSeriesElement("Website B");
+            seriesElement2.Values.Add(4, new DateTime(2007, 1, 1));
+            seriesElement2.Values.Add(2, new DateTime(2007, 2, 1));
+            seriesElement2.Values.Add(5, new DateTime(2007, 3, 1));
+            seriesElement2.Values.Add(8, new DateTime(2007, 4, 1));
+            DateTimeStackedBarSeriesElement seriesElement3 = new DateTimeStackedBarSeriesElement("Website C");
+            seriesElement3.Values.Add(2, new DateTime(2007, 1, 1));
+            seriesElement3.Values.Add(4, new DateTime(2007, 2, 1));
+            seriesElement3.Values.Add(6, new DateTime(2007, 3, 1));
+            seriesElement3.Values.Add(9, new DateTime(2007, 4, 1));
+
+            // Create a date time stacked bar series and add date time stacked bar series elements to it
+            DateTimeStackedBarSeries stackedBarSeries1 = new DateTimeStackedBarSeries();
+            stackedBarSeries1.Add(seriesElement1);
+            stackedBarSeries1.Add(seriesElement2);
+            stackedBarSeries1.Add(seriesElement3);
+
+            // Add date time stacked bar series to the plot area
+            plotArea.Series.Add(stackedBarSeries1);
+
+            // Create a title and add it to the XAxis
+            Title title3 = new Title("Viewers");
+            stackedBarSeries1.XAxis.Titles.Add(title3);
+
+            // Set label  format for axis labels
+            stackedBarSeries1.YAxis.LabelFormat = "MMM";
+
+            // Add the chart to the page
+            page.Elements.Add(chart);
+
+            // Save the PDF
+            document.Draw(outputPath);
+        }
+
+        public static void BarStacked100Example()
+        {
+            string outputPath = Util.GetPath("Output/barchart-stacked-100-datetime-output.pdf");
+            // Create a PDF Document
+            Document document = new Document();
+
+            // Create a Page and add it to the document
+            Page page = new Page();
+            document.Pages.Add(page);
+
+            // Create a chart
+            Chart chart = new Chart(0, 0, 400, 200);
+
+            // Get the default plot area from the chart
+            PlotArea plotArea = chart.PrimaryPlotArea;
+
+            // Create header titles and add it to the chart
+            Title title1 = new Title("Website Visitors");
+            Title title2 = new Title("Year - 2007");
+            chart.HeaderTitles.Add(title1);
+            chart.HeaderTitles.Add(title2);
+
+            // Create a date time 100 percent stacked bar series element and add values to it
+            DateTime100PercentStackedBarSeriesElement seriesElement1 = new DateTime100PercentStackedBarSeriesElement("Website A");
+            seriesElement1.Values.Add(5, new DateTime(2007, 1, 1));
+            seriesElement1.Values.Add(7, new DateTime(2007, 2, 1));
+            seriesElement1.Values.Add(9, new DateTime(2007, 3, 1));
+            seriesElement1.Values.Add(6, new DateTime(2007, 4, 1));
+            DateTime100PercentStackedBarSeriesElement seriesElement2 = new DateTime100PercentStackedBarSeriesElement("Website B");
+            seriesElement2.Values.Add(4, new DateTime(2007, 1, 1));
+            seriesElement2.Values.Add(2, new DateTime(2007, 2, 1));
+            seriesElement2.Values.Add(5, new DateTime(2007, 3, 1));
+            seriesElement2.Values.Add(8, new DateTime(2007, 4, 1));
+            DateTime100PercentStackedBarSeriesElement seriesElement3 = new DateTime100PercentStackedBarSeriesElement("Website C");
+            seriesElement3.Values.Add(2, new DateTime(2007, 1, 1));
+            seriesElement3.Values.Add(4, new DateTime(2007, 2, 1));
+            seriesElement3.Values.Add(6, new DateTime(2007, 3, 1));
+            seriesElement3.Values.Add(9, new DateTime(2007, 4, 1));
+
+            // Create a date time 100 percent stacked bar series and add date time 100 percent stacked bar series elements to it
+            DateTime100PercentStackedBarSeries stackedBarSeries1 = new DateTime100PercentStackedBarSeries();
+            stackedBarSeries1.Add(seriesElement1);
+            stackedBarSeries1.Add(seriesElement2);
+            stackedBarSeries1.Add(seriesElement3);
+
+            // Add date time stacked bar series to the plot area
+            plotArea.Series.Add(stackedBarSeries1);
+
+            // Create a title and add it to the XAxis
+            Title title3 = new Title("Viewers");
+            stackedBarSeries1.XAxis.Titles.Add(title3);
+
+            // Set label  format to the axis labels
+            stackedBarSeries1.YAxis.LabelFormat = "MMM";
+
+            // Add the chart to the page
+            page.Elements.Add(chart);
+
+            // Save the PDF
+            document.Draw(outputPath);
+        }
+
 
         public static void SimpleBarChart()
         {

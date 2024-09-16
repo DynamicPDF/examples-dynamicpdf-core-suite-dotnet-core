@@ -20,6 +20,7 @@ namespace DynamicPDFCoreSuite.Examples
 
         public static void SimpleBarChart()
         {
+            string outputPath = Util.GetPath("Output/barchart-simple-output.pdf");
             Document document = new Document();
             Page page = new Page();
             document.Pages.Add(page);
@@ -59,7 +60,7 @@ namespace DynamicPDFCoreSuite.Examples
             chart.PrimaryPlotArea.BottomTitles.Add(title2);
 
             page.Elements.Add(chart);
-            document.Draw(Util.GetPath("Output/barchart-simple-output.pdf"));
+            document.Draw(outputPath);
         }
 
         public static void SimpleBarChartIndexedAxis()
@@ -101,36 +102,35 @@ namespace DynamicPDFCoreSuite.Examples
 
         public static void SimpleBarChartManualLayout()
         {
+            string outputPath = Util.GetPath("Output/barchart-simple-manual-layout-output.pdf");
             Document document = new Document();
             Page page = new Page();
             document.Pages.Add(page);
 
-            Chart chart = new Chart(0, 0, 400, 200);
+            Chart chart = new Chart(0, 0, 400, 400);
             chart.BackgroundColor = RgbColor.AliceBlue;
-            chart.PrimaryPlotArea.BackgroundColor = RgbColor.Gray;
+            chart.AutoLayout = false;
+
+            Legend legend = chart.Legends.Add(20, 75, 75, 75);
+            legend.BackgroundColor = RgbColor.LightGrey;
+
+            PlotArea plotArea = chart.PlotAreas.Add(200, 25, 175, 150);
+            plotArea.BackgroundColor = RgbColor.Gray;
             
             IndexedBarSeries barSeries1 = new IndexedBarSeries("Item A");
-            chart.PrimaryPlotArea.Series.Add(barSeries1);
+            plotArea.Series.Add(barSeries1);
             barSeries1.Values.Add(new float[] { 5, 7, 9, 6 });
             IndexedBarSeries barSeries2 = new IndexedBarSeries("Item B");
-            chart.PrimaryPlotArea.Series.Add(barSeries2);
+            plotArea.Series.Add(barSeries2);
             barSeries2.Values.Add(new float[] { 4, 2, 5, 8 });
             IndexedBarSeries barSeries3 = new IndexedBarSeries("Item C");
-            chart.PrimaryPlotArea.Series.Add(barSeries3);
+            plotArea.Series.Add(barSeries3);
             barSeries3.Values.Add(new float[] { 2, 4, 6, 9 });
 
-            chart.AutoLayout = false;
-            chart.Legends[0].X = 20;
-            chart.Legends[0].Y = 75;
-            chart.Legends[0].BackgroundColor = RgbColor.Tan;
-
-            chart.PrimaryPlotArea.Height = 150;
-            chart.PrimaryPlotArea.Width = 175;
-            chart.PrimaryPlotArea.X = 200;
-            chart.PrimaryPlotArea.Y = 25;
-
+            chart.Layout();
+                         
             page.Elements.Add(chart);
-            document.Draw(Util.GetPath("Output/barchart-simple-manual-layout-output.pdf"));
+            document.Draw(outputPath);
         }
 
         public static void SimpleDoubleBarChart()

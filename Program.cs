@@ -6,20 +6,35 @@ namespace DynamicPDFCoreSuite
     {
         static void Main(string[] args)
         {
-
+            ceTe.DynamicPDF.Document.AddLicense("DPSULTU7837264260613XVbdT9KyGiNiiCGdQzSC8Pi4e2nkWuLtFgkfzkYp+zF7kduuLXp6wtX1klM4tfEUwbvfanhZ79MwUneljUSO2Z5APg");
 
             Util.CreatePath("Output");
-            Examples.Image3dExample.Run();
-            Examples.HtmlLayoutExample.Run();
-            Examples.ListContinuationExample.Run();
-            Examples.TextContinuationExample.Run();
-            Examples.DocumentSectioningExample.Run();
-            Examples.TemplateExample.Run();
-            Examples.EvenOddTemplateExample.Run();
-            Examples.StampTemplateExample.Run();
-            Examples.HeaderFooterTemplateExample.Run();
-            Examples.HtmlAreaExample.Run();
-            Examples.FormattedTextAreaExample.Run();
+            Examples.ChartLegendsExample.Run();
+            Examples.ChartTwoDiffPlotAreasExample.Run();
+            Examples.PieChartsExample.Run();
+            Examples.BarChartsExample.Run();
+            Examples.LineChartsExample.Run();
+            Examples.AreaChartExample.Run();
+            Examples.BarChartsExample.Run();
+            Examples.ColumnChartExample.Run();
+            Examples.XYScatterChartExample.Run();
+
+         //   Examples.PagesExample.Run();
+         //   Examples.Image3dExample.Run();
+         //   Examples.HtmlLayoutExample.Run();
+         //   Examples.ListContinuationExample.Run();
+          //  Examples.TextContinuationExample.Run();
+          //  Examples.DocumentSectioningExample.Run();
+           // Examples.TemplateExample.Run();
+           // Examples.EvenOddTemplateExample.Run();
+           // Examples.StampTemplateExample.Run();
+           // Examples.HeaderFooterTemplateExample.Run();
+           // Examples.HtmlAreaExample.Run();
+            //Examples.FormattedTextAreaExample.Run();
+          //  Examples.BarcodeExample.Run();
+           // Examples.ListsExample.Run();
+            //Examples.TableExample.Run();
+            //Examples.TableContinuationExample.Run();
             //Examples.LayoutEngineExample.Run();
             //Examples.RetrievingFormFieldsExample.Run();
             //Examples.FontsExample.Run();
@@ -56,7 +71,6 @@ namespace DynamicPDFCoreSuite
             //Examples.PdfACompatibleExample.Run();
             //Examples.PackagePdfExample.Run();
             //Examples.AddNewContentExample.Run();
-            //Examples.ListsExample.Run();
             //Examples.PageLinkExample.Run();
             //Examples.LayoutGridExample.Run();
             //Examples.JavascriptActionExample.Run();
@@ -68,7 +82,7 @@ namespace DynamicPDFCoreSuite
             //Examples.AnnotationsExample.Run();
             //Examples.AddImageExample.Run();
             //Examples.AddFormFieldsExample.Run();
-            //Examples.BarcodeExample.Run();
+
 
             // Output files are saved to the Output folder
         }

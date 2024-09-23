@@ -1,4 +1,6 @@
 
+Imports dynamicpdf_vbnet_examples.DynamicPDFCoreSuite.Examples
+
 Module Program
     Sub Main(args As String())
 
@@ -6,8 +8,8 @@ Module Program
 
         Util.CreateOutput()
 
-
         PieChartsExample.Run()
+        GridLinesExample.Run()
 
     End Sub
 

@@ -17,7 +17,7 @@ Namespace DynamicPDFCoreSuite.Examples
 
             tmp.Elements.Add(New Rectangle(x, y, wdt, hgt, RgbColor.LightSkyBlue, RgbColor.LightSkyBlue))
             tmp.Elements.Add(New Rectangle(x, y, 20, hgt, RgbColor.Navy, RgbColor.Navy))
-            tmp.Elements.Add(New Image(Util.GetPath("Resources/") & "DPDFLogo.png", x + 30, y + 5))
+            tmp.Elements.Add(New Image(Util.GetPath("Resources/Images/") & "DPDFLogo.png", x + 30, y + 5))
             tmp.Elements.Add(New Label("Test.", 200, 300, 200, 0))
             doc.Template = tmp
 

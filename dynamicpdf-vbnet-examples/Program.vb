@@ -12,6 +12,7 @@ Module Program
         GridLinesExample.Run()
         CreatePDF.Run()
         PagesExample.Run()
+        TemplateExample.Run()
 
     End Sub
 End Module

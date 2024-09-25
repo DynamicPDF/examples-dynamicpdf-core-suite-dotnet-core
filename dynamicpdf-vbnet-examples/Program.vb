@@ -10,11 +10,7 @@ Module Program
 
         PieChartsExample.Run()
         GridLinesExample.Run()
+        CreatePDF.Run()
 
     End Sub
-
-
-
-
-
 End Module

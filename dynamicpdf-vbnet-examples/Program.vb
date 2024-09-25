@@ -13,6 +13,7 @@ Module Program
         CreatePDF.Run()
         PagesExample.Run()
         TemplateExample.Run()
+        EvenOddTemplateExample.Run()
 
     End Sub
 End Module

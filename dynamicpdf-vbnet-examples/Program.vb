@@ -14,6 +14,7 @@ Module Program
         PagesExample.Run()
         TemplateExample.Run()
         EvenOddTemplateExample.Run()
+        StampTemplateExample.Run()
 
     End Sub
 End Module

@@ -17,6 +17,7 @@ Module Program
         StampTemplateExample.Run()
         HeaderFooterTemplateExample.Run()
         DocumentSectioningExample.Run()
+        HtmlLayoutExample.Run()
 
     End Sub
 End Module

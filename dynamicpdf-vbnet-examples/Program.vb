@@ -18,6 +18,7 @@ Module Program
         HeaderFooterTemplateExample.Run()
         DocumentSectioningExample.Run()
         HtmlLayoutExample.Run()
+        FormattedTextAreaExample.Run()
 
     End Sub
 End Module

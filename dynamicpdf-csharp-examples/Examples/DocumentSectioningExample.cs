@@ -1,6 +1,4 @@
-﻿
-
-using ceTe.DynamicPDF;
+﻿using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements;
 
 namespace DynamicPDFCoreSuite.Examples

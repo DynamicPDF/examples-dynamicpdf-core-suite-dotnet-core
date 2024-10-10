@@ -22,5 +22,6 @@ Module Program
         HtmlAreaExample.Run()
         ListsExample.Run()
         ListContinuationExample.Run()
+        TextContinuationExample.Run()
     End Sub
 End Module

@@ -19,6 +19,6 @@ Module Program
         DocumentSectioningExample.Run()
         HtmlLayoutExample.Run()
         FormattedTextAreaExample.Run()
-
+        HtmlAreaExample.Run()
     End Sub
 End Module

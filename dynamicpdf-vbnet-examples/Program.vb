@@ -25,5 +25,6 @@ Module Program
         TextContinuationExample.Run()
         TableExample.Run()
         TableContinuationExample.Run()
+        BarChartsExample.Run()
     End Sub
 End Module

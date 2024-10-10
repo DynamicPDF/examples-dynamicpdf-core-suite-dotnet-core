@@ -20,5 +20,7 @@ Module Program
         HtmlLayoutExample.Run()
         FormattedTextAreaExample.Run()
         HtmlAreaExample.Run()
+        ListsExample.Run()
+        ListContinuationExample.Run()
     End Sub
 End Module

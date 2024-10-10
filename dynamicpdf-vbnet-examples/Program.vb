@@ -23,5 +23,6 @@ Module Program
         ListsExample.Run()
         ListContinuationExample.Run()
         TextContinuationExample.Run()
+        TableExample.Run()
     End Sub
 End Module

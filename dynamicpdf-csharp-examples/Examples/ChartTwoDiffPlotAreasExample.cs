@@ -1,11 +1,6 @@
 ﻿using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements.Charting;
 using ceTe.DynamicPDF.PageElements.Charting.Series;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicPDFCoreSuite.Examples
 {

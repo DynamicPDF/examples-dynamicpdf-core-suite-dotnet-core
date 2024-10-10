@@ -26,5 +26,8 @@ Module Program
         TableExample.Run()
         TableContinuationExample.Run()
         BarChartsExample.Run()
+        ChartLegendsExample.Run()
+        ChartTwoDiffPlotAreasExample.Run()
+
     End Sub
 End Module

@@ -28,6 +28,6 @@ Module Program
         BarChartsExample.Run()
         ChartLegendsExample.Run()
         ChartTwoDiffPlotAreasExample.Run()
-
+        Image3dExample.Run()
     End Sub
 End Module

@@ -30,5 +30,6 @@ Module Program
         ChartTwoDiffPlotAreasExample.Run()
         Image3dExample.Run()
         BarcodeExample.Run()
+        ChartsXaxisExample.Run()
     End Sub
 End Module

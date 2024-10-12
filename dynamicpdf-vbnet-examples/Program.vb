@@ -29,5 +29,6 @@ Module Program
         ChartLegendsExample.Run()
         ChartTwoDiffPlotAreasExample.Run()
         Image3dExample.Run()
+        BarcodeExample.Run()
     End Sub
 End Module

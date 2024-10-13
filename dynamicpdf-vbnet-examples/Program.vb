@@ -31,5 +31,6 @@ Module Program
         Image3dExample.Run()
         BarcodeExample.Run()
         ChartsXaxisExample.Run()
+        ChartYaxisExamples.Run()
     End Sub
 End Module

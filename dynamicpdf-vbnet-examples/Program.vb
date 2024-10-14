@@ -8,6 +8,7 @@ Module Program
 
         Util.CreateOutput()
 
+        XYScatterChartExample.Run()
         PieChartsExample.Run()
         GridLinesExample.Run()
         CreatePDF.Run()

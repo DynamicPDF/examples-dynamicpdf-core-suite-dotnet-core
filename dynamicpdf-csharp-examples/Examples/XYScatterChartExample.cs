@@ -10,7 +10,6 @@ namespace DynamicPDFCoreSuite.Examples
     {
         public static void Run()
         {
-            string outputPath = Util.GetPath("Output/xyscatter-chart-output.pdf");
             // Create a PDF Document
             Document document = new Document();
             // Create a Page and add it to the document
@@ -53,7 +52,7 @@ namespace DynamicPDFCoreSuite.Examples
             // Add the chart to the page
             page.Elements.Add(chart);
             // Save the PDF
-            document.Draw(outputPath);
+            Util.GetPath("Output/xyscatter-chart-output.pdf")
         }
 
     }

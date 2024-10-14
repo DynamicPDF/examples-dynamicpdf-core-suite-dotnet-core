@@ -35,5 +35,6 @@ Module Program
         ChartYaxisExamples.Run()
         AreaChartExample.Run()
         ColumnChartExample.Run()
+        LineChartsExample.Run()
     End Sub
 End Module

@@ -10,7 +10,7 @@ namespace DynamicPDFCoreSuite.Examples
         public static void Run()
         {
             PageInfo layoutPage = new PageInfo(PageSize.A4, PageOrientation.Portrait);
-            Uri uri = new Uri(@"http://en.wikipedia.org");
+            Uri uri = new Uri(@"https://www.dynamicpdf.com/docs/dotnet/dynamic-pdf-core-suite-welcome");
 
             HtmlLayout html = new HtmlLayout(uri, layoutPage);
 

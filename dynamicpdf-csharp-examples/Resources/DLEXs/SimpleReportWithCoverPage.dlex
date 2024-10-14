@@ -1,0 +1,27 @@
+<document xmlns="https://www.dynamicpdf.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.dynamicpdf.com https://www.dynamicpdf.com/schemas/DLEX20.xsd" version="2.0" author="" keywords="" subject="" title="" id="Document1">
+  <page id="Page1" pageSize="letter" pageOrientation="portrait" leftMargin="50" topMargin="50" rightMargin="50" bottomMargin="50">
+    <recordArea id="RecordArea1" x="0" y="464" width="512" height="66" align="center" fontSize="24" underline="false" vAlign="bottom" autoLeading="true" cleanParagraphBreaks="true" expandable="false" rightToLeft="false" splittable="false">
+      <text>This report was created for:
+#ReportCreatedFor#</text>
+    </recordArea>
+    <image id="Image1" x="160.5" y="142" width="191" height="189" path="NorthwindLogo.gif"/>
+  </page>
+  <report id="Report1" dataName="Products" pageSize="letter" pageOrientation="portrait" leftMargin="50" topMargin="50" rightMargin="50" bottomMargin="50">
+    <template id="Template1"/>
+    <header id="Header" height="36">
+      <recordBox id="DateRecordBox" x="0" y="0" width="512" height="12" font="HelveticaBold" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" rightToLeft="false" splittable="false" dataName="CurrentDateTime()" dataFormat="d MMM yyyy h:mm:ss tt"/>
+      <label id="Label4" x="0" y="0" width="512" height="12" align="center" font="HelveticaBold" underline="false" text="Northwind Product List"/>
+      <pageNumberingLabel id="PageNumberingLabel1" x="0" y="0" width="512" height="12" align="right" font="HelveticaBold" underline="false" text="Page %%CP%% of %%TP%%"/>
+      <label id="Label1" x="2" y="23" width="236" height="14" font="TimesBold" fontSize="11" underline="false" text="Product Name"/>
+      <label id="Label2" x="242" y="23" width="156" height="14" font="TimesBold" fontSize="11" underline="false" text="Qty Per Unit"/>
+      <label id="Label3" x="402" y="23" width="108" height="14" align="right" font="TimesBold" fontSize="11" underline="false" text="Unit Price"/>
+      <line id="Line1" x1="0" y1="36" x2="512" y2="36"/>
+    </header>
+    <detail id="Body" autoSplit="false" height="18">
+      <recordBox id="RecordBox1" x="2" y="3" width="236" height="14" font="TimesRoman" fontSize="11" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" rightToLeft="false" splittable="false" dataName="ProductName"/>
+      <recordBox id="RecordBox2" x="242" y="3" width="156" height="14" font="TimesRoman" fontSize="11" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" rightToLeft="false" splittable="false" dataName="QuantityPerUnit"/>
+      <recordBox id="RecordBox3" x="402" y="3" width="108" height="14" align="right" font="TimesRoman" fontSize="11" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" rightToLeft="false" splittable="false" dataName="UnitPrice" dataFormat="0.00##"/>
+    </detail>
+    <footer id="Footer" height="0"/>
+  </report>
+</document>

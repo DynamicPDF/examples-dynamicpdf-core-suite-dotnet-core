@@ -7,7 +7,7 @@ Module Program
         Console.WriteLine(AppContext.BaseDirectory)
 
         Util.CreateOutput()
-
+        InteractiveFormsExample.Run()
         XYScatterChartExample.Run()
         PieChartsExample.Run()
         GridLinesExample.Run()

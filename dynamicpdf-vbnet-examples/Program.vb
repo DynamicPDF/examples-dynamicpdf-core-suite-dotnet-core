@@ -7,6 +7,7 @@ Module Program
         Console.WriteLine(AppContext.BaseDirectory)
 
         Util.CreateOutput()
+        PdfACompatibleExample.Run()
         XmpMetadataExample.Run()
         InteractiveFormsExample.Run()
         XYScatterChartExample.Run()

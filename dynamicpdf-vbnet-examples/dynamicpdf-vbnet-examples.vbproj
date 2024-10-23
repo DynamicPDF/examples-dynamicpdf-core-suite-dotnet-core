@@ -10,4 +10,8 @@
     <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.20.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Output\" />
+  </ItemGroup>
+
 </Project>

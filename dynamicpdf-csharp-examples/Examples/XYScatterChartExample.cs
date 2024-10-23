@@ -52,7 +52,7 @@ namespace DynamicPDFCoreSuite.Examples
             // Add the chart to the page
             page.Elements.Add(chart);
             // Save the PDF
-            Util.GetPath("Output/xyscatter-chart-output.pdf")
+            Util.GetPath("Output/xyscatter-chart-output.pdf");
         }
 
     }

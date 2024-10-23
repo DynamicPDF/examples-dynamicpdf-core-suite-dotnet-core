@@ -16,8 +16,6 @@ namespace DynamicPDFCoreSuite.Examples
             RightsManagementSchemaExample();
             BasicSchemaExample();
 
-
-
         }
 
 

@@ -7,6 +7,7 @@ Module Program
         Console.WriteLine(AppContext.BaseDirectory)
 
         Util.CreateOutput()
+        XmpMetadataExample.Run()
         InteractiveFormsExample.Run()
         XYScatterChartExample.Run()
         PieChartsExample.Run()

@@ -8,6 +8,7 @@ Namespace DynamicPDFCoreSuite.Examples
         Public Shared Sub Run()
             Dim document As New Document()
             document.Pages.Add(New Page(PageSize.Letter))
+            AddButton(document)
             AddCheckbox(document)
             AddComboBox(document)
             AddListBoxField(document)
@@ -15,6 +16,19 @@ Namespace DynamicPDFCoreSuite.Examples
             AddTextField(document)
             AddSignatureField(document)
             document.Draw(Util.GetPath("Output/interactive-forms-output.pdf"))
+        End Sub
+
+        Public Shared Sub AddButton(document As Document)
+            Dim MyButton As Button = New Button("Button Name", 50, 50, 100, 50)
+            MyButton.Action = New JavaScriptAction("app.alert('Hello');")
+            MyButton.BackgroundColor = RgbColor.AliceBlue
+            MyButton.Behavior = Behavior.CreatePush("downLabel", "rolloverLabel")
+            MyButton.BorderColor = RgbColor.BlueViolet
+            MyButton.BorderStyle = BorderStyle.Beveled
+            MyButton.Label = "Push"
+            MyButton.TextColor = RgbColor.DarkGreen
+            MyButton.ToolTip = "Click"
+            document.Pages(0).Elements.Add(MyButton)
         End Sub
 
         Public Shared Sub AddCheckbox(document As Document)

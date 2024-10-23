@@ -17,6 +17,7 @@ namespace DynamicPDFCoreSuite.Examples
             AddRadioButton(document);
             AddTextField(document);
             AddSignatureField(document);
+            AddButton(document);
             document.Draw(Util.GetPath("Output/interactive-forms-output.pdf"));
 
         }
@@ -104,6 +105,19 @@ namespace DynamicPDFCoreSuite.Examples
             document.Pages[0].Elements.Add(label);
             document.Pages[0].Elements.Add(signature);
 
+        }
+
+        public static void AddButton(Document document)
+        {
+            Button button = new Button("Button Name", 0, 700, 100, 30);
+            button.Action = new JavaScriptAction("app.alert('Hello');");
+            button.BackgroundColor = RgbColor.AliceBlue;
+            button.Behavior = Behavior.CreatePush("downLabel", "rolloverLabel");
+            button.BorderStyle = BorderStyle.Beveled;
+            button.Label = "Push";
+            button.TextColor = RgbColor.DarkGreen;
+            button.ToolTip = "Click";
+            document.Pages[0].Elements.Add(button);
         }
 
 

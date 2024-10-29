@@ -5,8 +5,8 @@ Module Program
     Sub Main(args As String())
 
         Console.WriteLine(AppContext.BaseDirectory)
-
         Util.CreateOutput()
+        PdfUaExample.Run()
         PdfXCompatibleExample.Run()
         PdfACompatibleExample.Run()
         XmpMetadataExample.Run()

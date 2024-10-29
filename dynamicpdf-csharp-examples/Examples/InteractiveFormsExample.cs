@@ -1,4 +1,5 @@
 ﻿using ceTe.DynamicPDF;
+using ceTe.DynamicPDF.Imaging;
 using ceTe.DynamicPDF.PageElements;
 using ceTe.DynamicPDF.PageElements.Forms;
 
@@ -101,7 +102,8 @@ namespace DynamicPDFCoreSuite.Examples
         {
             Label label = new Label("Signature:", 0, 575, 100, 0);
             Signature signature = new Signature("MySigField", 100, 575, 300, 100);
-            signature.FullPanel.SetImage(Util.GetPath("Resources/Images/signature.png"));
+            signature.LeftPanel.SetImage(Util.GetPath("Resources/Images/signature.png"));
+            signature.FullPanel.FitImage = true;
             document.Pages[0].Elements.Add(label);
             document.Pages[0].Elements.Add(signature);
 
@@ -112,11 +114,15 @@ namespace DynamicPDFCoreSuite.Examples
             Button button = new Button("Button Name", 0, 700, 100, 30);
             button.Action = new JavaScriptAction("app.alert('Hello');");
             button.BackgroundColor = RgbColor.AliceBlue;
-            button.Behavior = Behavior.CreatePush("downLabel", "rolloverLabel");
             button.BorderStyle = BorderStyle.Beveled;
             button.Label = "Push";
             button.TextColor = RgbColor.DarkGreen;
-            button.ToolTip = "Click";
+            button.ToolTip = "Push the button";
+
+            button.Image = ImageData.GetImage(Util.GetPath("Resources/Images/button-a.png"));
+            button.LabelImageLayout = LabelImageLayoutOptions.LabelLeftImageRight;
+            button.Behavior = Behavior.CreatePush("Down", "Over", ImageData.GetImage(Util.GetPath("Resources/Images/button-c.png")), ImageData.GetImage(Util.GetPath("Resources/Images/button-b.png")));
+
             document.Pages[0].Elements.Add(button);
         }
 

@@ -6,6 +6,7 @@ Module Program
 
         Console.WriteLine(AppContext.BaseDirectory)
         Util.CreateOutput()
+        EventsExample.Run()
         PdfUaExample.Run()
         PdfXCompatibleExample.Run()
         PdfACompatibleExample.Run()

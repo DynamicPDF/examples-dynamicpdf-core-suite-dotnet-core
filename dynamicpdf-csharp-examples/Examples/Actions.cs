@@ -8,6 +8,7 @@ namespace DynamicPDFCoreSuite.Examples
     {
         public static void Run()
         {
+            ChainAction();
             GoToAction();
             ResetAction();
             SubmitAction();
@@ -15,6 +16,38 @@ namespace DynamicPDFCoreSuite.Examples
             FileOpenAction();
             AnnotationShowHideAction();
             XyDestinationZoomDestination();
+        }
+
+        public static void ChainAction()
+        {
+            Document document = new Document();
+            Page page = new Page();
+            document.Pages.Add(page);
+            
+            Label label = new Label("Text Field:", 0, 50, 100, 0);
+            TextField textField = new TextField("text1", 100, 50, 150, 100);
+            Label label2 = new Label("Hide All Fields:", 0, 10, 100, 0);
+            CheckBox checkBox = new CheckBox("check_box_nm", 110, 7, 50, 50);
+
+            Button button = new Button("btn", 50, 150, 100, 30);
+            button.Label = "Hide";
+
+            AnnotationShowHideAction action = new AnnotationShowHideAction("check_box_nm");
+            action.NextAction = new AnnotationShowHideAction("text1");
+            action.NextAction.NextAction = new JavaScriptAction("app.alert(\"Fields Hidden.\")");
+            action.NextAction.NextAction.NextAction = new FileOpenAction(Util.GetPath("Resources/PDFs/DocumentA.pdf"), FileLaunchMode.NewWindow);
+
+            button.ReaderEvents.MouseDown = action;
+           
+
+            document.Pages[0].Elements.Add(label);
+            document.Pages[0].Elements.Add(checkBox);
+            document.Pages[0].Elements.Add(label2);
+            document.Pages[0].Elements.Add(textField);
+            document.Pages[0].Elements.Add(button);
+
+            document.Draw(Util.GetPath("Output/ChainingAction.pdf"));
+
         }
 
         public static void AnnotationShowHideAction()
@@ -128,7 +161,7 @@ namespace DynamicPDFCoreSuite.Examples
 
             Button button = new Button("btn", 50, 150, 100, 30);
             button.Label = "Click Here";
-            FileOpenAction action = new FileOpenAction(Util.GetPath("Output/UrlAction.pdf"), FileLaunchMode.NewWindow);
+            FileOpenAction action = new FileOpenAction(Util.GetPath("Resources/PDFs/DocumentA.pdf"), FileLaunchMode.NewWindow);
             button.ReaderEvents.MouseUp = action;
             
             page.Elements.Add(button);

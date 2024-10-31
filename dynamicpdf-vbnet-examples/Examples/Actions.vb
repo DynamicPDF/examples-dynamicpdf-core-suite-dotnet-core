@@ -12,7 +12,38 @@ Namespace DynamicPDFCoreSuite.Examples
             FileOpenAction()
             AnnotationShowHideAction()
             XyDestinationZoomDestination()
+            ChainAction()
         End Sub
+
+        Public Shared Sub ChainAction()
+            Dim document As New Document()
+            Dim page As New Page()
+            document.Pages.Add(page)
+
+            Dim label As New Label("Text Field:", 0, 50, 100, 0)
+            Dim textField As New TextField("text1", 100, 50, 150, 100)
+            Dim label2 As New Label("Hide All Fields:", 0, 10, 100, 0)
+            Dim checkBox As New CheckBox("check_box_nm", 110, 7, 50, 50)
+
+            Dim button As New Button("btn", 50, 150, 100, 30)
+            button.Label = "Hide"
+
+            Dim action As New AnnotationShowHideAction("check_box_nm")
+            action.NextAction = New AnnotationShowHideAction("text1")
+            action.NextAction.NextAction = New JavaScriptAction("app.alert(""Fields Hidden."")")
+            action.NextAction.NextAction.NextAction = New FileOpenAction(Util.GetPath("Resources/PDFs/DocumentA.pdf"), FileLaunchMode.NewWindow)
+
+            button.ReaderEvents.MouseDown = action
+
+            document.Pages(0).Elements.Add(label)
+            document.Pages(0).Elements.Add(checkBox)
+            document.Pages(0).Elements.Add(label2)
+            document.Pages(0).Elements.Add(textField)
+            document.Pages(0).Elements.Add(button)
+
+            document.Draw(Util.GetPath("Output/ChainingAction.pdf"))
+        End Sub
+
 
         Public Shared Sub XyDestinationZoomDestination()
             Dim document As New Document()

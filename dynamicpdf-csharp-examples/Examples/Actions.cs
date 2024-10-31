@@ -14,6 +14,7 @@ namespace DynamicPDFCoreSuite.Examples
             UrlAction();
             FileOpenAction();
             AnnotationShowHideAction();
+            XyDestinationZoomDestination();
         }
 
         public static void AnnotationShowHideAction()
@@ -133,5 +134,38 @@ namespace DynamicPDFCoreSuite.Examples
             page.Elements.Add(button);
             document.Draw(Util.GetPath("Output/FileOpenAction.pdf"));
         }
+
+        public static void XyDestinationZoomDestination()
+        {
+            Document document = new Document();
+
+            // Add three blank pages
+            document.Pages.Add(new Page(PageSize.Letter));
+            document.Pages.Add(new Page(PageSize.Letter));
+            document.Pages.Add(new Page(PageSize.Letter));
+
+            // Add a top level outline and set properties
+            Outline outline1 = document.Outlines.Add("Outline1");
+            outline1.Style = TextStyle.Bold;
+            outline1.Color = new RgbColor(1.0f, 0.0f, 0.0f);
+
+            // Add child outlines
+            Outline outline1A = outline1.ChildOutlines.Add("Outline1A", new UrlAction("http://www.mydomain.com"));
+            outline1A.Expanded = false;
+            Outline outline1A1 = outline1A.ChildOutlines.Add("Outline1A1", new XYDestination(2, 0, 0));
+            Outline outline1A2 = outline1A.ChildOutlines.Add("Outline1A2", new ZoomDestination(2, PageZoom.FitHeight));
+            Outline outline1B = outline1.ChildOutlines.Add("Outline1B", new ZoomDestination(2, PageZoom.FitWidth));
+
+            // Add a second top level outline
+            Outline outline2 = document.Outlines.Add("Outline2", new XYDestination(3, 0, 300));
+
+            // Add a child outline
+            Outline outline2A = outline2.ChildOutlines.Add("Outline2A");
+
+            // Save the PDF document
+            document.Draw(Util.GetPath("Output/XyDestinationZoomDestinationAction.pdf"));
+        }
+
+
     }
 }

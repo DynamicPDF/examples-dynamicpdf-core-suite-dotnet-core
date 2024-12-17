@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.20.0" />
+    <None Remove="ceTeLicenseKeys.csl4" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Output\" />
+    <EmbeddedResource Include="ceTeLicenseKeys.csl4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.20.0" />
   </ItemGroup>
 
 </Project>

@@ -5,11 +5,20 @@ namespace DynamicPDFCoreSuite
     class Program
     {
         static void Main(string[] args)
-        { 
+        {
 
-
-           Util.CreatePath("Output");
-
+            Util.CreatePath("Output");
+            Examples.PdfUaExample.Run();
+            EmbeddingFilesExample.Run();
+            Examples.InteractiveFormsExample.Run();
+            Examples.PdfACompatibleExample.Run();
+            Examples.PdfUaExample.Run();
+           EventsExample.Run();
+           Actions.Run();
+            Examples.InteractiveFormsExample.Run();
+            Examples.FormFieldsAddExample.Run();
+             PackagePdfExample.Run();
+            Examples.InteractiveFormsExample.Run();
             Examples.AcroformExamineExample.Run();
             Examples.ChartsXaxisExample.Run();
             Examples.ChartYaxisExamples.Run();
@@ -86,7 +95,6 @@ namespace DynamicPDFCoreSuite
             Examples.AnnotationsExample.Run();
             Examples.AddImageExample.Run();
             Examples.AddFormFieldsExample.Run();
-         
         }
     }
 }

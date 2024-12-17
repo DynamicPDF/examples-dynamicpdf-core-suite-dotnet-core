@@ -2,6 +2,7 @@
 using ceTe.DynamicPDF.Imaging;
 using ceTe.DynamicPDF.PageElements;
 using ceTe.DynamicPDF.PageElements.Forms;
+using System;
 
 namespace DynamicPDFCoreSuite.Examples
 {
@@ -17,11 +18,14 @@ namespace DynamicPDFCoreSuite.Examples
             AddListBoxField(document);
             AddRadioButton(document);
             AddTextField(document);
-            AddSignatureField(document);
-            AddButton(document);
+            //AddSignatureField(document);
+            //AddButton(document);
+            //AddSubmitButton(document);
+            MailForm(document);
             document.Draw(Util.GetPath("Output/interactive-forms-output.pdf"));
 
         }
+
 
         public static void AddCheckbox(Document document)
         {
@@ -124,6 +128,34 @@ namespace DynamicPDFCoreSuite.Examples
             button.Behavior = Behavior.CreatePush("Down", "Over", ImageData.GetImage(Util.GetPath("Resources/Images/button-c.png")), ImageData.GetImage(Util.GetPath("Resources/Images/button-b.png")));
 
             document.Pages[0].Elements.Add(button);
+        }
+
+        public static void AddSubmitButton(Document document)
+        {
+            Button button = new Button("Submit", 125, 700, 150, 30);
+            button.Action = new SubmitAction("http://localhost:8000/handle.php", FormExportFormat.FDF);
+            button.BackgroundColor = RgbColor.AliceBlue;
+            button.BorderStyle = BorderStyle.Beveled;
+            button.Label = "Submit";
+            button.TextColor = RgbColor.DarkGreen;
+            document.Pages[0].Elements.Add(button);
+        }
+
+        public static void MailForm(Document document)
+        {
+
+            string bodyMsg = "Thank you for submitting this form.";
+            string javascriptString = "var cEmailURL = \"mailto:myname@mydomain.com?subject='Form Submission'&body='" + bodyMsg + "'\";";
+            javascriptString += " this.submitForm({ cURL: encodeURI(cEmailURL), cSubmitAs: 'PDF', cCharSet: 'utf-8'});";
+
+            Button button = new Button("email", 125,700, 100, 20);
+
+            button.BackgroundColor = RgbColor.Yellow;
+            button.BorderStyle = BorderStyle.Beveled;
+            button.Action = new JavaScriptAction(javascriptString);
+            button.Label = "Email";
+            document.Pages[0].Elements.Add(button);
+
         }
 
 

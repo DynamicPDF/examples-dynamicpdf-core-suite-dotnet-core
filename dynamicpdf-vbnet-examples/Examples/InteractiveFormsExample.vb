@@ -108,6 +108,24 @@ Namespace DynamicPDFCoreSuite.Examples
             document.Pages(0).Elements.Add(label)
             document.Pages(0).Elements.Add(signature)
         End Sub
+
+        Public Shared Sub MailForm(document As Document)
+
+            Dim bodyMsg As String = "Thank you for submitting this form."
+            Dim javascriptString As String = "var cEmailURL = ""mailto:myaddress@mydomain.com?subject='Form Submission'&body='" & bodyMsg & "'"";"
+            javascriptString += " this.submitForm({ cURL: encodeURI(cEmailURL), cSubmitAs: 'PDF', cCharSet: 'utf-8'});"
+
+            Dim button As New Button("email", 125, 700, 100, 20)
+
+            button.BackgroundColor = RgbColor.Yellow
+            button.BorderStyle = BorderStyle.Beveled
+            button.Action = New JavaScriptAction(javascriptString)
+            button.Label = "Email"
+            document.Pages(0).Elements.Add(button)
+
+        End Sub
+
+
     End Class
 End Namespace
 

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>dynamicpdf_vbnet_examples</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ceTeLicenseKeys.csl4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ceTeLicenseKeys.csl4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.20.0" />
+  </ItemGroup>
+
+</Project>

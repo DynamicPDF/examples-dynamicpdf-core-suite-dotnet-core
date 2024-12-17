@@ -27,7 +27,7 @@ namespace DynamicPDFCoreSuite.Examples
             Signature signature = new Signature("SigField", 10, 10, 250, 100);
             page.Elements.Add(signature);
             document.Pages.Add(page);
-            Certificate certificate = new Certificate(Util.GetPath("Resources/Data/JohnDoe.pfx"), "dynamicpdf");
+            Certificate certificate = new Certificate(Util.GetPath("Resources/Data/JohnDoe.pfx"), "password");
 
             // Field name should be one of the signature field name 
             document.Certify("SigField", certificate, CertifyingPermission.NoChangesAllowed);
@@ -41,7 +41,7 @@ namespace DynamicPDFCoreSuite.Examples
             Page page = new Page(PageSize.Letter);
             document.Pages.Add(page);
 
-            Certificate certificate = new Certificate(Util.GetPath("Resources/Data/JohnDoe.pfx"), "dynamicpdf");
+            Certificate certificate = new Certificate(Util.GetPath("Resources/Data/JohnDoe.pfx"), "password");
 
             document.Certify("NonExistingField", certificate, CertifyingPermission.NoChangesAllowed);
 

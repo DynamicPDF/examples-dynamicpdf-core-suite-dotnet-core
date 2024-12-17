@@ -224,7 +224,8 @@ ClientBin/
 *.dbmdl
 *.dbproj.schemaview
 *.jfm
-*.pfx
+#so gets the example file
+#*.pfx
 *.publishsettings
 orleans.codegen.cs
 

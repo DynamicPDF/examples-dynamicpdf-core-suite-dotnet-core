@@ -20,6 +20,7 @@ Module Program
         DocumentSectioningExample.Run()
         EvenOddTemplateExample.Run()
         EventsExample.Run()
+        FontsExample.Run()
         FormattedTextAreaExample.Run()
         GridLinesExample.Run()
         GroupingExample.Run()

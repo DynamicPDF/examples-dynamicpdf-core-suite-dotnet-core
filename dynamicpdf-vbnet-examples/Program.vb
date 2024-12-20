@@ -21,6 +21,7 @@ Module Program
         EvenOddTemplateExample.Run()
         EventsExample.Run()
         FontsExample.Run()
+        FontKerning.Run()
         FormattedTextAreaExample.Run()
         GridLinesExample.Run()
         GroupingExample.Run()

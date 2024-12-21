@@ -57,7 +57,7 @@ namespace DynamicPDFCoreSuite
             Image3dExample.Run();
             ImageStampExample.Run();
             InteractiveFormsExample.Run();
-            JavascriptActionExample.Run();
+            JavaScriptExample.Run();
             LayoutEngineExample.Run();
             LayoutGridExample.Run();
             LineChartsExample.Run();

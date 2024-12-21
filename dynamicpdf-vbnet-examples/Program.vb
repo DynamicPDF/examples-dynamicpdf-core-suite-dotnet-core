@@ -19,6 +19,7 @@ Module Program
         ColorsExample.Run()
         ColumnChartExample.Run()
         CreatePDF.Run()
+        DigitalSignatureExample.Run()
         DocumentSectioningExample.Run()
         EvenOddTemplateExample.Run()
         EventsExample.Run()

@@ -1,14 +1,9 @@
 ﻿using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicPDFCoreSuite.Examples
 {
-    class CertificateExample
+    public class CertificateExample
     {
 
         public static void Run()

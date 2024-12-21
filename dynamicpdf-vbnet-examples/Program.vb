@@ -31,6 +31,7 @@ Module Program
         HtmlLayoutExample.Run()
         Image3dExample.Run()
         InteractiveFormsExample.Run()
+        JavaScriptExample.Run()
         LineChartsExample.Run()
         ListsExample.Run()
         ListContinuationExample.Run()

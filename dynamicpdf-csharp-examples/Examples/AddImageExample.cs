@@ -8,11 +8,11 @@ namespace DynamicPDFCoreSuite.Examples
     {
         public static void Run()
         {
-            ExampleOne();
-            ExampleTwo();
+            ImageExample();
+            BackgroundImageExample();
         }
 
-        public static void ExampleOne()
+        public static void ImageExample()
         {
             Document document = new Document();
 
@@ -25,20 +25,20 @@ namespace DynamicPDFCoreSuite.Examples
             document.Draw(Util.GetPath("Output/images-one-example.pdf"));
         }
 
-        public static void ExampleTwo()
+        public static void BackgroundImageExample()
         {
             Document document = new Document();
 
             Page page = new Page();
             document.Pages.Add(page);
 
-            BackgroundImage backgroundImage = new BackgroundImage(Util.GetPath("Resources/Images/stamp.png"));
+            BackgroundImage backgroundImage = new BackgroundImage(Util.GetPath("Resources/Images/DPDFLogo_Watermark.png"));
 
             backgroundImage.UseMargins = true;
 
             page.Elements.Add(backgroundImage);
 
-            document.Draw(Util.GetPath("Output/images-two-example.pdf"));
+            document.Draw(Util.GetPath("Output/background-image-example.pdf"));
         }
     }
 }

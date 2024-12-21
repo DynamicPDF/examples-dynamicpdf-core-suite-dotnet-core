@@ -41,15 +41,8 @@ Namespace DynamicPDFCoreSuite.Examples
         End Sub
 
         Public Shared Sub GoogleFontsExample()
-            Dim document As New Document()
-            document.Pages.Add(New Page(PageSize.Letter))
 
-            Dim googleFont As GoogleFont = Font.Google("Roboto", False, False)
 
-            Dim lbl As New Label("A Google Font Example.", 10, 10, 150, 50, googleFont, 22)
-            document.Pages(0).Elements.Add(lbl)
-
-            document.Draw(Util.GetPath("Output/googlefont-font-example-one.pdf"))
         End Sub
 
         Public Shared Sub CJKExample()

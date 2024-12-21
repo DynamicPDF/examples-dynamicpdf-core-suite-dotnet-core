@@ -15,6 +15,7 @@ Module Program
         ChartsXaxisExample.Run()
         ChartYaxisExamples.Run()
         ChartTwoDiffPlotAreasExample.Run()
+        ColorsExample.Run()
         ColumnChartExample.Run()
         CreatePDF.Run()
         DocumentSectioningExample.Run()

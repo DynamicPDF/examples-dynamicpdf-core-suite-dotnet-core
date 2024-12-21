@@ -11,6 +11,7 @@ Module Program
         BarcodeExample.Run()
         BarChartsExample.Run()
         BookmarkOutlineExample.Run()
+        CertificateExample.Run()
         ChartLegendsExample.Run()
         ChartsXaxisExample.Run()
         ChartYaxisExamples.Run()

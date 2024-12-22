@@ -21,6 +21,7 @@ Module Program
         CreatePDF.Run()
         DigitalSignatureExample.Run()
         DocumentSectioningExample.Run()
+        EncryptPDF.Run()
         EvenOddTemplateExample.Run()
         EventsExample.Run()
         FontsExample.Run()

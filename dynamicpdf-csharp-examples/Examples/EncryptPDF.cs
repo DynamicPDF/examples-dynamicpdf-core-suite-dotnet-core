@@ -23,7 +23,7 @@ namespace DynamicPDFCoreSuite.Examples
             security.AllowAccessibility = true;
             security.AllowFormFilling = false;
             document.Security = security;
-            document.Draw(Util.GetPath("Output/EncryptNewPDF.pdf"));
+            document.Draw(Util.GetPath("Output/encryptNewPDF.pdf"));
         }
 
         public static void Merger()
@@ -35,7 +35,7 @@ namespace DynamicPDFCoreSuite.Examples
             security.AllowPrint = false;
             document.Security = security;
             
-            document.Draw(Util.GetPath("Output/EncryptExistingPDF.pdf"));
+            document.Draw(Util.GetPath("Output/encryptExistingPDF.pdf"));
         }
     }
 }

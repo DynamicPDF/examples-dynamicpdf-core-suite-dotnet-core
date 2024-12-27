@@ -6,7 +6,7 @@ Module Program
 
         Console.WriteLine(AppContext.BaseDirectory)
         Util.CreateOutput()
-
+        AddNewContentExample.Run()
         AreaChartExample.Run()
         BarcodeExample.Run()
         BarChartsExample.Run()

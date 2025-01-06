@@ -2,7 +2,7 @@
 
 namespace DynamicPDFCoreSuite.Examples
 {
-    class SplitPDF
+    class SplitPdfExample
     {
         public static void Run()
         {

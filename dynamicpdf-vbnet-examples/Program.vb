@@ -38,7 +38,7 @@ Module Program
         LineChartsExample.Run()
         ListsExample.Run()
         ListContinuationExample.Run()
-        MergePDFs.Run()
+        MergePdfExample.Run()
         PagesExample.Run()
         PdfUaExample.Run()
         PdfXCompatibleExample.Run()

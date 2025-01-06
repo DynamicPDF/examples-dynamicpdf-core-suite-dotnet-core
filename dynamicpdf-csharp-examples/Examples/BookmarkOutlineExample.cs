@@ -58,7 +58,7 @@ namespace DynamicPDFCoreSuite.Examples
             Outline outline2 = document.Outlines.Add("Outline2", new XYDestination(3, 0, 300));
             Outline outline2A = outline2.ChildOutlines.Add("Outline2A");
 
-            document.Draw(Util.GetPath("Output/outlinek-example.pdf"));
+            document.Draw(Util.GetPath("Output/outline-example.pdf"));
         }
     }
 }

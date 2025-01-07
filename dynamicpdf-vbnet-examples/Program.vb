@@ -1,4 +1,5 @@
 
+Imports dynamicpdf_vbnet_examples.dynamicpdf_vb_examples.Examples
 Imports dynamicpdf_vbnet_examples.DynamicPDFCoreSuite.Examples
 
 Module Program
@@ -24,6 +25,7 @@ Module Program
         EncryptPDF.Run()
         EvenOddTemplateExample.Run()
         EventsExample.Run()
+        ExtractingExistingContent.Run()
         FontsExample.Run()
         FontKerning.Run()
         FormattedTextAreaExample.Run()

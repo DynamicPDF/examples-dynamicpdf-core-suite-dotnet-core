@@ -26,7 +26,7 @@ namespace dynamicpdf_csharp_examples.Examples
             lbl.TextColor = RgbColor.Navy;
             page.Elements.Add(lbl);
             document.Pages.Insert(0, page);
-            document.Draw(Util.GetPath("Output/existing-content-import-page-output.pdf"));
+            document.Draw(Util.GetPath("Output/existing-content-imp-page-output.pdf"));
         }
 
         public static void ExtractImageDocument()

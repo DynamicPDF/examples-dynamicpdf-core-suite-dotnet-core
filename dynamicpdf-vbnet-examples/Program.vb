@@ -1,5 +1,6 @@
 
 Imports dynamicpdf_vbnet_examples.dynamicpdf_vb_examples.Examples
+Imports dynamicpdf_vbnet_examples.dynamicpdf_vbnet_examples.Examples
 Imports dynamicpdf_vbnet_examples.DynamicPDFCoreSuite.Examples
 
 Module Program
@@ -7,6 +8,7 @@ Module Program
 
         Console.WriteLine(AppContext.BaseDirectory)
         Util.CreateOutput()
+        AddExistingContent.Run()
         AddNewContentExample.Run()
         AreaChartExample.Run()
         BarcodeExample.Run()

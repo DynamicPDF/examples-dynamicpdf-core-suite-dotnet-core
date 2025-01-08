@@ -9,6 +9,7 @@ namespace DynamicPDFCoreSuite
         {
 
             Util.CreatePath("Output");
+            
             AddExistingContent.Run();
             AddNewContentExample.Run();
             AcroFormFilling.Run();
@@ -48,6 +49,7 @@ namespace DynamicPDFCoreSuite
             FormattedTextAreaExample.Run();
             FormFieldsRemoveAddExample.Run();
             FormFieldsReadOnly.Run();
+            FormFillingExample.Run();
             FormFlatteningExample.Run();
             GenerateReportExample.Run();
             GridLinesExample.Run();

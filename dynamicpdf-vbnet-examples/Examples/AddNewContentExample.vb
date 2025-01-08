@@ -10,7 +10,23 @@ Namespace DynamicPDFCoreSuite.Examples
             ImportPage()
             ImportPageAddElements()
             InsertPage()
+            ImportPageBackgroundElements()
         End Sub
+        Public Shared Sub ImportPageBackgroundElements()
+            Dim document As New MergeDocument()
+            Dim importedPage As New ImportedPage(Util.GetPath("Resources/PDFs/doc-text.pdf"), 1)
+            Dim image As New Image(Util.GetPath("Resources/images/large-logo.png"), 40, 150, 0.5F)
+            importedPage.BackgroundElements.Add(image)
+
+            Dim lbl As New Label("Added Image", 100, 600, 400, 0)
+            lbl.FontSize = 56
+            lbl.TextColor = RgbColor.Red
+            importedPage.BackgroundElements.Add(lbl)
+
+            document.Pages.Add(importedPage)
+            document.Draw(Util.GetPath("Output/import-background-elements-output.pdf"))
+        End Sub
+
 
         Public Shared Sub AddContent()
             Dim document As New MergeDocument(Util.GetPath("Resources/PDFs/DocumentC.pdf"))

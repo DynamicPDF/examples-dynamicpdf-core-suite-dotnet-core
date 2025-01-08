@@ -13,6 +13,21 @@ namespace DynamicPDFCoreSuite.Examples
             ImportPage();
             ImportPageAddElements();
             InsertPage();
+            ImportPageBackgroundElements();
+        }
+
+        public static void ImportPageBackgroundElements()
+        {
+            MergeDocument document = new MergeDocument();
+            ImportedPage importedPage = new ImportedPage(Util.GetPath("Resources/PDFs/doc-text.pdf"), 1);
+            Image image = new Image(Util.GetPath("Resources/images/large-logo.png"), 40, 150, .5F);
+            importedPage.BackgroundElements.Add(image);
+            Label lbl = new Label("Added Image", 100, 600, 400, 0);
+            lbl.FontSize = 56;
+            lbl.TextColor = RgbColor.Red;
+            importedPage.BackgroundElements.Add(lbl);
+            document.Pages.Add(importedPage);
+            document.Draw(Util.GetPath("Output/import-background-elements-output.pdf"));
         }
 
         public static void AddContent()

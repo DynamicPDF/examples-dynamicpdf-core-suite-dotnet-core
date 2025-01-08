@@ -11,7 +11,31 @@ Namespace DynamicPDFCoreSuite.Examples
             ImportPageAddElements()
             InsertPage()
             ImportPageBackgroundElements()
+            ImportedPagePlacing()
+            ImportedPageClipping()
         End Sub
+        Public Shared Sub ImportedPageClipping()
+            Dim document As New Document()
+            Dim page As New Page(PageSize.Tabloid, PageOrientation.Landscape)
+            Dim importedPageArea As New ImportedPageArea(Util.GetPath("Resources/PDFs/DocumentC.pdf"), 1, 0, 0, 0.5F)
+            importedPageArea.Contents.ClipLeft = 100
+            importedPageArea.Contents.ClipTop = 100
+            importedPageArea.Contents.ClipRight = 100
+            importedPageArea.Contents.ClipBottom = 100
+            page.Elements.Add(importedPageArea)
+            document.Pages.Add(page)
+            document.Draw(Util.GetPath("Output/import-page-clipping-output.pdf"))
+        End Sub
+
+        Public Shared Sub ImportedPagePlacing()
+            Dim document As New Document()
+            Dim page As New Page(PageSize.Tabloid, PageOrientation.Landscape)
+            page.Elements.Add(New ImportedPageData(Util.GetPath("Resources/PDFs/doc-text.pdf"), 1, -306, 0))
+            page.Elements.Add(New ImportedPageData(Util.GetPath("Resources/PDFs/DocumentA.pdf"), 2, 306, 0))
+            document.Pages.Add(page)
+            document.Draw(Util.GetPath("Output/import-page-placing-output.pdf"))
+        End Sub
+
         Public Shared Sub ImportPageBackgroundElements()
             Dim document As New MergeDocument()
             Dim importedPage As New ImportedPage(Util.GetPath("Resources/PDFs/doc-text.pdf"), 1)

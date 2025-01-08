@@ -14,7 +14,34 @@ namespace DynamicPDFCoreSuite.Examples
             ImportPageAddElements();
             InsertPage();
             ImportPageBackgroundElements();
+            ImportedPagePlacing();
+            ImportedPageClipping();
         }
+
+        public static void ImportedPageClipping()
+        {
+            Document document = new Document();
+            Page page = new Page(PageSize.Tabloid, PageOrientation.Landscape);
+            ImportedPageArea importedPageArea = new ImportedPageArea(Util.GetPath("Resources/PDFs/DocumentC.pdf"), 1, 0, 0, 0.5f);
+            importedPageArea.Contents.ClipLeft = 100;
+            importedPageArea.Contents.ClipTop = 100;
+            importedPageArea.Contents.ClipRight = 100;
+            importedPageArea.Contents.ClipBottom = 100;
+            page.Elements.Add(importedPageArea);
+            document.Pages.Add(page);
+            document.Draw(Util.GetPath("Output/import-page-clipping-output.pdf"));
+        }
+
+        public static void ImportedPagePlacing()
+        {
+            Document document = new Document();
+            Page page = new Page(PageSize.Tabloid, PageOrientation.Landscape);
+            page.Elements.Add(new ImportedPageData(Util.GetPath("Resources/PDFs/doc-text.pdf"), 1, -306, 0));
+            page.Elements.Add(new ImportedPageData(Util.GetPath("Resources/PDFs/DocumentA.pdf"), 2, 306, 0));
+            document.Pages.Add(page);
+            document.Draw(Util.GetPath("Output/import-page-placing-output.pdf"));
+        }
+
 
         public static void ImportPageBackgroundElements()
         {

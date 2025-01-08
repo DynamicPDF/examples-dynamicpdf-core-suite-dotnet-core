@@ -9,10 +9,8 @@ namespace DynamicPDFCoreSuite
         {
 
             Util.CreatePath("Output");
-                                  
             AddExistingContent.Run();
             AddNewContentExample.Run();
-            AcroformExamineExample.Run();
             AcroFormFilling.Run();
             Actions.Run();
             AddImageExample.Run();
@@ -96,7 +94,6 @@ namespace DynamicPDFCoreSuite
             WatermarkExample.Run();
             XmpMetadataExample.Run();
             XYScatterChartExample.Run();
-
         }
     }
 }

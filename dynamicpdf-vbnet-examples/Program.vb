@@ -31,6 +31,7 @@ Module Program
         FontsExample.Run()
         FontKerning.Run()
         FormattedTextAreaExample.Run()
+        FormFieldsRemoveAddExample.Run()
         FormFillingExample.Run()
         GridLinesExample.Run()
         GroupingExample.Run()

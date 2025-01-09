@@ -51,6 +51,7 @@ Module Program
         PdfXCompatibleExample.Run()
         PdfACompatibleExample.Run()
         PieChartsExample.Run()
+        ReadFormFieldsExample.Run()
         StampTemplateExample.Run()
         TextContinuationExample.Run()
         TableExample.Run()

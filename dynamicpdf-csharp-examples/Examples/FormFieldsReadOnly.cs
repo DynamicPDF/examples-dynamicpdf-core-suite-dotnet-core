@@ -14,7 +14,7 @@ namespace DynamicPDFCoreSuite.Examples
 
         public static void ExampleOne()
         {
-            ceTe.DynamicPDF.Merger.MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/simple-form-fill.pdf"));
+            MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/simple-form-fill.pdf"));
             document.Form.Fields["nameField"].Value = "John Doe";
             document.Form.Fields["descriptionField"].Value = "Simple Form";
             document.Form.IsReadOnly = true;

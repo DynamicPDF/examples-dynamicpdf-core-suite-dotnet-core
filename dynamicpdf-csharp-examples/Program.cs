@@ -9,7 +9,6 @@ namespace DynamicPDFCoreSuite
         {
 
             Util.CreatePath("Output");
-            
             AddExistingContent.Run();
             AddNewContentExample.Run();
             AcroFormFilling.Run();
@@ -68,6 +67,7 @@ namespace DynamicPDFCoreSuite
             LineChartsExample.Run();
             ListContinuationExample.Run();
             ListsExample.Run();
+            MergerActions.Run();
             MergePdfExample.Run();
             PackagePdfExample.Run();
             PagesExample.Run();

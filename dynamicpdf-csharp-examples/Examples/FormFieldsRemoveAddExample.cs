@@ -11,6 +11,23 @@ namespace DynamicPDFCoreSuite.Examples
         {
             Remove();
             Replace();
+            RemoveAll();
+            RemoveAllOutput();
+        }
+
+        public static void RemoveAllOutput()
+        {
+            MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/AllFormFields.pdf"));
+            document.Form.Output = FormOutput.Remove;
+            document.Draw(Util.GetPath("Output/formfield-remove-all-output-example.pdf"));
+        }
+
+        public static void RemoveAll()
+        {
+            MergeOptions mergeOptions = new MergeOptions();
+            mergeOptions.FormFields = false;
+            MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/AllFormFields.pdf"), mergeOptions);
+            document.Draw(Util.GetPath("Output/formfield-remove-all-example.pdf"));
         }
 
         public static void Remove()

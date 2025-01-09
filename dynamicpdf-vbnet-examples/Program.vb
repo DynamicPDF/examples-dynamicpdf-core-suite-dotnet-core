@@ -44,6 +44,7 @@ Module Program
         ListsExample.Run()
         ListContinuationExample.Run()
         MergePdfExample.Run()
+        MergerActions.Run()
         PagesExample.Run()
         PdfUaExample.Run()
         PdfXCompatibleExample.Run()

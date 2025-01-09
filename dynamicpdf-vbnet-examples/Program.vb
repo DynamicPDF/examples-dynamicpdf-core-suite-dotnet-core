@@ -52,6 +52,7 @@ Module Program
         PdfACompatibleExample.Run()
         PieChartsExample.Run()
         ReadFormFieldsExample.Run()
+        RetrievingFormFieldsExample.Run()
         StampTemplateExample.Run()
         TextContinuationExample.Run()
         TableExample.Run()

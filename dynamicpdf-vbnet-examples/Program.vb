@@ -27,6 +27,7 @@ Module Program
         EncryptPDF.Run()
         EvenOddTemplateExample.Run()
         EventsExample.Run()
+        ExistingOutlinesExample.Run()
         ExtractingExistingContent.Run()
         FontsExample.Run()
         FontKerning.Run()

@@ -11,32 +11,36 @@ namespace dynamicpdf_csharp_examples.Examples
     {
         public static void Run()
         {
-            PrintOut();
+            ReadOutline();
             AddOutline();
             AddBookmark();
             AddBookmarkToExistingPage();
             ReplaceOutline();
         }
 
-        public static void PrintOut()
+        public static void ReadOutline()
         {
             PdfDocument pdfDocument = new PdfDocument(Util.GetPath("Resources/PDFs/outline-example.pdf"));
-
             for (int i = 0; i < pdfDocument.Outlines.Count; i++)
             {
                 PdfOutline outline = pdfDocument.Outlines[i];
-                if (outline.ChildOutlines.Count > 0)
-                {
-                    for (int j = 0; j < outline.ChildOutlines.Count; j++)
-                    {
-                        Console.WriteLine(outline.ChildOutlines[j].Text + ":" + outline.ChildOutlines[j].TargetPageNumber);
-                    }
-                }
-
-                Console.WriteLine(outline.Text + ": " + pdfDocument.Outlines[i].TargetPageNumber);
+                PrintOutline(outline);
             }
-
         }
+
+        private static void PrintOutline(PdfOutline outline)
+        {
+            Console.WriteLine(outline.Text + ": " + outline.TargetPageNumber);
+
+            if (outline.ChildOutlines.Count > 0)
+            {
+                for (int j = 0; j < outline.ChildOutlines.Count; j++)
+                {
+                    PrintOutline(outline.ChildOutlines[j]);
+                }
+            }
+        }
+
 
         public static void AddOutline()
         {
@@ -47,6 +51,7 @@ namespace dynamicpdf_csharp_examples.Examples
             Outline outline1A = outline1.ChildOutlines.Add("ChildA 1", new XYDestination(2, 0, 0));
             document.Draw(Util.GetPath("Output/add-to-outline-output.pdf"));
         }
+
 
         public static void ReplaceOutline()
         {

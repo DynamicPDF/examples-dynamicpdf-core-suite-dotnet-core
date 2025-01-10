@@ -67,7 +67,7 @@ namespace DynamicPDFCoreSuite
             LineChartsExample.Run();
             ListContinuationExample.Run();
             ListsExample.Run();
-            MergerActions.Run();
+            FormFdfExample.Run();
             MergePdfExample.Run();
             PackagePdfExample.Run();
             PagesExample.Run();

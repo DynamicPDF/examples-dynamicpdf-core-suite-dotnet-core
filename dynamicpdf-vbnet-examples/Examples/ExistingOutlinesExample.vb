@@ -11,6 +11,33 @@ Namespace dynamicpdf_vbnet_examples.Examples
             AddBookmark()
             AddBookmarkToExistingPage()
             ReplaceOutline()
+            ModifyOutline()
+        End Sub
+        Public Shared Sub ModifyOutline()
+            Dim docA As New PdfDocument(Util.GetPath("Resources/PDFs/outline-a.pdf"))
+            Dim docB As New PdfDocument(Util.GetPath("Resources/PDFs/outline-b.pdf"))
+            Dim pdfOutB As PdfOutline = docB.Outlines(1)
+
+            Dim document As New MergeDocument()
+            document.Append(docA, MergeOptions.None)
+            document.Append(docB, MergeOptions.None)
+
+            Dim root As Outline = document.Outlines.Add("Merged Document")
+
+            root.ChildOutlines.Add("DynamicPDF Website", New UrlAction("https://www.dynamicpdf.com/"))
+
+            For i As Integer = 1 To document.Pages.Count
+                root.ChildOutlines.Add("Page " & i, New XYDestination(i, 0, 0))
+            Next
+
+            document.Outlines.Add(pdfOutB.Text)
+
+            For i As Integer = 0 To pdfOutB.ChildOutlines.Count - 1
+                Dim targetPage As Integer = docA.Pages.Count + pdfOutB.ChildOutlines(i).TargetPageNumber
+                document.Outlines(1).ChildOutlines.Add("Bookmark Page " & targetPage, New XYDestination(targetPage, 0, 0))
+            Next
+
+            document.Draw(Util.GetPath("Output/modify-outline-output.pdf"))
         End Sub
 
         Public Shared Sub ReadOutline()

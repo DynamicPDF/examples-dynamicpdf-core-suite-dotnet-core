@@ -16,6 +16,7 @@ namespace dynamicpdf_csharp_examples.Examples
             AddBookmark();
             AddBookmarkToExistingPage();
             ReplaceOutline();
+            ModifyOutline();
         }
 
         public static void ReadOutline()
@@ -83,6 +84,38 @@ namespace dynamicpdf_csharp_examples.Examples
             Page page = document.Pages[3];
             page.Elements.Add(new Bookmark("Added Bookmark", 0, 0));
             document.Draw(Util.GetPath("Output/add-to-bookmark-existing-page-output.pdf"));
+        }
+
+        public static void ModifyOutline()
+        {
+            PdfDocument docA = new(Util.GetPath("Resources/PDFs/outline-a.pdf"));
+            PdfDocument docB = new(Util.GetPath("Resources/PDFs/outline-b.pdf"));
+            PdfOutline pdfOutB = docB.Outlines[1];
+
+            MergeDocument document = new();
+            document.Append(docA, MergeOptions.None);
+            document.Append(docB, MergeOptions.None);
+
+            Outline root = document.Outlines.Add("Merged Document");
+
+            root.ChildOutlines.Add("DynamicPDF Website", new UrlAction("https://www.dynamicpdf.com/"));
+
+            for (int i = 1; i <= document.Pages.Count; i++)
+            {
+                root.ChildOutlines.Add("Page " + i, new XYDestination(i, 0, 0));
+            }
+
+            document.Outlines.Add(pdfOutB.Text);
+
+            for(int i = 0; i < pdfOutB.ChildOutlines.Count; i++)
+            {
+                int targetPage = docA.Pages.Count + pdfOutB.ChildOutlines[i].TargetPageNumber;
+                document.Outlines[1].ChildOutlines.Add("Bookmark Page " + targetPage, new XYDestination(targetPage, 0,0));
+                
+            }
+             
+            document.Draw(Util.GetPath("Output/modify-outline-output.pdf"));
+
         }
     }
 }

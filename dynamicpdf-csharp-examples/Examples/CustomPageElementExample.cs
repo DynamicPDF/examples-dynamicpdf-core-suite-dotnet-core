@@ -7,6 +7,12 @@ namespace DynamicPDFCoreSuite.Examples
 
         public static void Run()
         {
+            PolygonExample();
+            TextAreaExample();
+        }
+
+        public static void PolygonExample()
+        {
             Document document = new Document();
             Page page = new Page();
             document.Pages.Add(page);
@@ -31,7 +37,20 @@ namespace DynamicPDFCoreSuite.Examples
 
 
 
-            document.Draw(Util.GetPath("Output/custom-page-element-output.pdf"));
+            document.Draw(Util.GetPath("Output/custom-page-element-poly-output.pdf"));
         }
+
+        public static void TextAreaExample()
+        {
+            Document document = new Document();
+            Page page = new Page();
+            document.Pages.Add(page);
+            CustomElement ce = new CustomElement("A custom text area", 0, 0, 500, 50);
+            ce.FontSize = 62;
+            document.Pages[0].Elements.Add(ce);
+            document.Pages.Add(page);
+            document.Draw(Util.GetPath("Output/custom-page-element-textarea-output.pdf"));
+        }
+
     }
 }

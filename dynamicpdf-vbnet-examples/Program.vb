@@ -22,6 +22,7 @@ Module Program
         ColorsExample.Run()
         ColumnChartExample.Run()
         CreatePDF.Run()
+        CustomPageElementExample.Run()
         DigitalSignatureExample.Run()
         DocumentSectioningExample.Run()
         EncryptPDF.Run()

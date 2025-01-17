@@ -10,8 +10,6 @@ namespace DynamicPDFCoreSuite
 
             Util.CreatePath("Output");
 
-            CustomPageElementExample.Run();
-/*
             AddExistingContent.Run();
             AddNewContentExample.Run();
             AcroFormFilling.Run();
@@ -37,6 +35,7 @@ namespace DynamicPDFCoreSuite
             ColumnChartExample.Run();
             CombinePDFs.Run();
             CreatePDF.Run();
+            CustomPageElementExample.Run();
             DigitalSignatureExample.Run();
             DiskBufferingExample.Run();
             DocumentSectioningExample.Run();
@@ -100,7 +99,6 @@ namespace DynamicPDFCoreSuite
             WatermarkExample.Run();
             XmpMetadataExample.Run();
             XYScatterChartExample.Run();
-*/
         }
     }
 }

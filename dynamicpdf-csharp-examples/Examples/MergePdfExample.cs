@@ -22,7 +22,10 @@ namespace DynamicPDFCoreSuite.Examples
 
         public static void MergePDF()
         {
-            MergeDocument document = MergeDocument.Merge(Util.GetPath("Resources/PDFs/DocumentA.pdf"), Util.GetPath("Resources/PDFs/DocumentB.pdf"));
+            MergeOptions mo = new MergeOptions();
+            mo.NamedDestinations = false;
+
+            MergeDocument document = MergeDocument.Merge(Util.GetPath("Resources/PDFs/DocumentA.pdf"), mo, Util.GetPath("Resources/PDFs/DocumentB.pdf"), mo);
             document.Draw(Util.GetPath("Output/merge-output.pdf"));
         }
 

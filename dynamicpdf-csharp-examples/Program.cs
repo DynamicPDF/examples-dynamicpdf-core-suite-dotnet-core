@@ -9,7 +9,6 @@ namespace DynamicPDFCoreSuite
         {
 
             Util.CreatePath("Output");
-
             AddExistingContent.Run();
             AddNewContentExample.Run();
             AcroFormFilling.Run();

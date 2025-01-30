@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ProductList>
+  <Products ProductID="17" ProductName="Chai" QuantityPerUnit="10 boxes x 20 bags" UnitPrice="18.00"/>
+  <Products ProductID="18" ProductName="Chang" QuantityPerUnit="24 - 12 oz bottles" UnitPrice="19.00"/>
+  <Products ProductID="19" ProductName="Aniseed Syrup" QuantityPerUnit="12 - 550 ml bottles" UnitPrice="10.00"/>
+  <Products ProductID="20" ProductName="Chef Anton&apos;s Cajun Seasoning" QuantityPerUnit="48 - 6 oz jars" UnitPrice="22.00"/>
+  <Products ProductID="21" ProductName="Chef Anton&apos;s Gumbo Mix" QuantityPerUnit="36 boxes" UnitPrice="21.35"/>
+</ProductList>

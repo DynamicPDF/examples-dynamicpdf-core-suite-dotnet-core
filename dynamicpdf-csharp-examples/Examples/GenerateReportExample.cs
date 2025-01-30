@@ -21,6 +21,7 @@ namespace DynamicPDFCoreSuite.Examples
             GenerateUsingLinqData();
             GenerateUsingDatabaseTable();
             GenerateUsingSql();
+            GenerateTopLevelExample();
         }
 
         public static void GenerateUsingJson()
@@ -116,6 +117,26 @@ namespace DynamicPDFCoreSuite.Examples
                 }
             }
             document.Draw(Util.GetPath("Output/report-query-layout-data-output.pdf"));
+        }
+
+        public static void GenerateTopLevelExample()
+        {
+
+            DocumentLayout layoutReport = new DocumentLayout(Util.GetPath("Resources/DLEXs/form-fill.dlex"));
+            LayoutData layoutData = new LayoutData();
+            layoutData.Add("FirstNameAndI", "Alex B.");
+            layoutData.Add("LastName", "Smith");
+            layoutData.Add("SSN", "123-45-6789");
+            layoutData.Add("HomeAddress", "456 Green Road");
+            layoutData.Add("CityStateZip", "Somewhere, Earth  12345");
+            layoutData.Add("Allowances", "2");
+            layoutData.Add("IsSingle", true);
+
+            Document document = layoutReport.Layout(layoutData);
+            document.Author = "DynamicPDF ReportWriter";
+            document.Title = "Form Fill Example";
+
+            document.Draw(Util.GetPath("Output/toplevel-noobject-layoutdata.pdf"));
         }
     }
 }

@@ -13,11 +13,29 @@ Namespace DynamicPDFCoreSuite.Examples
         Private Shared CONNECTION_STRING As String = "Data Source=(local);Initial Catalog=Northwind;Integrated Security=true"
 
         Public Shared Sub Run()
+            GenerateTopLevelExample()
             GenerateUsingJson()
             GenerateUsingDataObjects()
             GenerateUsingLinqData()
             GenerateUsingDatabaseTable()
             GenerateUsingSql()
+        End Sub
+        Public Shared Sub GenerateTopLevelExample()
+            Dim layoutReport As New DocumentLayout(Util.GetPath("Resources/DLEXs/form-fill.dlex"))
+            Dim layoutData As New LayoutData()
+            layoutData.Add("FirstNameAndI", "Alex B.")
+            layoutData.Add("LastName", "Smith")
+            layoutData.Add("SSN", "123-45-6789")
+            layoutData.Add("HomeAddress", "456 Green Road")
+            layoutData.Add("CityStateZip", "Somewhere, Earth  12345")
+            layoutData.Add("Allowances", "2")
+            layoutData.Add("IsSingle", True)
+
+            Dim document As Document = layoutReport.Layout(layoutData)
+            document.Author = "DynamicPDF ReportWriter"
+            document.Title = "Form Fill Example"
+
+            document.Draw(Util.GetPath("Output/toplevel-noobject-layoutdata.pdf"))
         End Sub
 
         Public Shared Sub GenerateUsingJson()

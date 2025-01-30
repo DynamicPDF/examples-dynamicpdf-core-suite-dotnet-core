@@ -1,0 +1,9 @@
+{
+  "FirstNameAndI": "Alex B.",
+  "LastName": "Smith",
+  "SSN": "123-45-6789",
+  "HomeAddress": "456 Green Road",
+  "IsSingle": true,
+  "CityStateZip": "Somewhere, Earth  12345",
+  "Allowances": 2
+}

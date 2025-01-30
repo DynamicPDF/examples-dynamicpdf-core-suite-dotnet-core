@@ -1,0 +1,12 @@
+<document xmlns="https://www.dynamicpdf.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.dynamicpdf.com https://www.dynamicpdf.com/schemas/DLEX20.xsd" version="2.0" author="" keywords="" subject="" title="" id="Document1">
+  <page id="Page1" pageSize="letter" pageOrientation="portrait" leftMargin="36" topMargin="36" rightMargin="36" bottomMargin="36" templatePath="fw4-p1.pdf" templatePageNumber="1">
+    <recordBox id="RecordBox1" x="28" y="514" width="150" height="12" font="Courier" fontSize="10" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" splittable="false" dataName="FirstNameAndI"/>
+    <recordBox id="RecordBox2" x="184" y="514" width="218" height="12" font="Courier" fontSize="10" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" splittable="false" dataName="LastName"/>
+    <recordBox id="RecordBox3" x="417" y="514" width="122" height="12" font="Courier" fontSize="10" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" splittable="false" dataName="SSN"/>
+    <recordBox id="RecordBox4" x="28" y="538" width="244" height="12" font="Courier" fontSize="10" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" splittable="false" dataName="HomeAddress"/>
+    <recordBox id="RecordBox5" x="28.5" y="562" width="244" height="12" font="Courier" fontSize="10" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" splittable="false" dataName="CityStateZip"/>
+    <recordBox id="RecordBox6" x="477" y="576" width="61" height="10" align="center" font="Courier" fontSize="10" underline="false" autoLeading="true" cleanParagraphBreaks="true" expandable="false" splittable="false" dataName="Allowances"/>
+    <symbol id="Symbol1" x="285" y="527" width="14" height="14" visibilityCondition="IsSingle" size="10" symbolType="check1"/>
+    <symbol id="Symbol2" x="328" y="527" width="14" height="14" visibilityCondition="!IsSingle" size="10" symbolType="check1"/>
+  </page>
+</document>

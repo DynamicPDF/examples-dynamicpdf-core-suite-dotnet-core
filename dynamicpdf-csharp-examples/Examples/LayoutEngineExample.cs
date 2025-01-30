@@ -3,7 +3,6 @@ using ceTe.DynamicPDF.LayoutEngine;
 using ceTe.DynamicPDF.LayoutEngine.Data;
 using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
@@ -48,6 +47,8 @@ namespace DynamicPDFCoreSuite.Examples
             DatabaseVersionSql(dlexString);
             NameValuesExample(dlexString);
 
+            //from documentation
+            TopLevelDataExample();
         }
 
         // Create a PDF using DLEX and JSON document.
@@ -185,5 +186,34 @@ namespace DynamicPDFCoreSuite.Examples
             Document document = documentLayout.Layout(layoutData);
             document.Draw(Util.GetPath("Output/subreport_db_object_output.pdf"));
         }
+
+        public static void TopLevelDataExample()
+        {
+            // Create the document's layout from a DLEX template
+            DocumentLayout layoutReport = new DocumentLayout(Util.GetPath("Resources/DLEXs/FormFill.dlex"));
+
+            // Specify the data.
+            NameValueLayoutData layoutData = new NameValueLayoutData();
+            W4Data w4Data = new W4Data
+            {
+                FirstNameAndI = "Alex B.",
+                LastName = "Smith",
+                SSN = "123-45-6789",
+                HomeAddress = "456 Green Road",
+                IsSingle = true,
+                CityStateZip = "Somewhere, Earth  12345",
+                Allowances = 2
+            };
+
+            layoutData.Add("W4Data", w4Data);
+
+            // Layout the document and save the PDF
+            Document document = layoutReport.Layout(layoutData);
+            document.Author = "DynamicPDF ReportWriter";
+            document.Title = "Form Fill Example";
+
+            document.Draw(Util.GetPath("Output/toplevel-layoutdata.pdf"));
+        }
+
     }
 }

@@ -36,6 +36,7 @@ Module Program
         FormFieldsReadOnly.Run()
         FormFieldsRemoveAddExample.Run()
         FormFillingExample.Run()
+        GenerateReportExample.Run()
         GridLinesExample.Run()
         GroupingExample.Run()
         HeaderFooterTemplateExample.Run()

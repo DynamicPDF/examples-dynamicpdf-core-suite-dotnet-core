@@ -44,7 +44,6 @@ namespace DynamicPDFCoreSuite.Examples
 
             JsonVersion(dlexString, jsonString);
             DatabaseVersionWithJson(dlexString);
-            DatabaseVersionSql(dlexString);
             NameValuesExample(dlexString);
 
             //from documentation
@@ -106,51 +105,7 @@ namespace DynamicPDFCoreSuite.Examples
 
         //Create a PDF using data from database and the ReportDataRequired event.
 
-        private static void DatabaseVersionSql(String dlexString)
-        {
-
-            DocumentLayout documentLayout = new DocumentLayout(dlexString); ;
-
-            // Attach to the ReportDataRequired event
-            documentLayout.ReportDataRequired += DocumentLayout_ReportDataRequired;
-
-            LayoutData layoutData = new LayoutData();
-
-            Document document = documentLayout.Layout(layoutData);
-            document.Draw(Util.GetPath("Output/subreport_db_sql_output.pdf"));
-        }
-
-        private static void DocumentLayout_ReportDataRequired(object sender, ReportDataRequiredEventArgs args)
-        {
-
-            if (args.ElementId == "ProductsByCategoryReport")
-            {
-                string sqlString =
-                    "SELECT CategoryID, CategoryName Name " +
-                    "FROM   Categories ";
-
-                SqlConnection connection = new SqlConnection(CONNECTION_STRING);
-                SqlCommand command = new SqlCommand(sqlString, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                args.ReportData = new DataReaderReportData(connection, reader);
-            }
-            else if (args.ElementId == "ProductsByCategorySubReport")
-            {
-                string sqlString =
-                    "SELECT ProductID, ProductName, QuantityPerUnit, UnitPrice, Discontinued " +
-                    "FROM   Products " +
-                    "WHERE  CategoryID = " + args.Data["CategoryID"] + " " +
-                    "ORDER BY ProductName ";
-
-                SqlConnection connection = new SqlConnection(CONNECTION_STRING);
-                SqlCommand command = new SqlCommand(sqlString, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                args.ReportData = new DataReaderReportData(connection, reader);
-            }
-        }
-
+ 
 
         //Create a PDF using data from data model.
 

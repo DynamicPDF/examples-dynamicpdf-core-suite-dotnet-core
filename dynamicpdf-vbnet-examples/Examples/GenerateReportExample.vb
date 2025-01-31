@@ -1,11 +1,13 @@
 ﻿Imports ceTe.DynamicPDF
 Imports ceTe.DynamicPDF.LayoutEngine
 Imports ceTe.DynamicPDF.LayoutEngine.Data
+Imports dynamicpdf_vbnet_examples.ProductCategoryData
 Imports Newtonsoft.Json
 Imports System.Data
 Imports System.Data.SqlClient
 Imports System.IO
 Imports System.Linq
+Imports System.Text
 Imports System.Xml.Linq
 
 Namespace DynamicPDFCoreSuite.Examples
@@ -19,6 +21,88 @@ Namespace DynamicPDFCoreSuite.Examples
             GenerateUsingLinqData()
             GenerateUsingDatabaseTable()
             GenerateUsingSql()
+            GenerateSubReportUsingJson()
+            GenerateSubreportUsingDataObjects()
+            GenerateSubReportUsingSqlJson()
+            GenerateSubReportUsingSqlEvent()
+        End Sub
+        Public Shared Sub GenerateSubReportUsingSqlEvent()
+            Dim documentLayout As New DocumentLayout(Util.GetPath("Resources/DLEXs/subreport.dlex"))
+            AddHandler documentLayout.ReportDataRequired, AddressOf DocumentLayout_ReportDataRequired
+            Dim layoutData As New LayoutData()
+            Dim document As Document = documentLayout.Layout(layoutData)
+            document.Draw(Util.GetPath("Output/subreport_db_sql_output.pdf"))
+        End Sub
+
+        Private Shared Sub DocumentLayout_ReportDataRequired(sender As Object, args As ReportDataRequiredEventArgs)
+            If args.ElementId = "ProductsByCategoryReport" Then
+                Dim sqlString As String =
+                "SELECT CategoryID, CategoryName Name " &
+                "FROM   Categories "
+
+                Dim connection As New SqlConnection(CONNECTION_STRING)
+                Dim command As New SqlCommand(sqlString, connection)
+                connection.Open()
+                Dim reader As SqlDataReader = command.ExecuteReader()
+                args.ReportData = New DataReaderReportData(connection, reader)
+
+            ElseIf args.ElementId = "ProductsByCategorySubReport" Then
+                Dim sqlString As String =
+                "SELECT ProductID, ProductName, QuantityPerUnit, UnitPrice, Discontinued " &
+                "FROM   Products " &
+                "WHERE  CategoryID = " & args.Data("CategoryID") & " " &
+                "ORDER BY ProductName "
+
+                Dim connection As New SqlConnection(CONNECTION_STRING)
+                Dim command As New SqlCommand(sqlString, connection)
+                connection.Open()
+                Dim reader As SqlDataReader = command.ExecuteReader()
+                args.ReportData = New DataReaderReportData(connection, reader)
+            End If
+        End Sub
+        Public Shared Sub GenerateSubReportUsingSqlJson()
+            Dim queryWithForJson As String = "SELECT CategoryName as Name, ProductID, ProductName, " &
+                                         "QuantityPerUnit, Discontinued, UnitPrice " &
+                                         "FROM Categories, Products FOR JSON auto, root('ProductsByCategory')"
+
+            Using conn As New SqlConnection(CONNECTION_STRING)
+                Using cmd As New SqlCommand(queryWithForJson, conn)
+                    conn.Open()
+                    Dim jsonResult As New StringBuilder()
+                    Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+                    If Not reader.HasRows Then
+                        jsonResult.Append("[]")
+                    Else
+                        While reader.Read()
+                            jsonResult.Append(reader.GetValue(0).ToString())
+                        End While
+                    End If
+
+                    Dim jsonData As Object = JsonConvert.DeserializeObject(jsonResult.ToString())
+                    Dim layoutReport As New DocumentLayout(Util.GetPath("Resources/DLEXs/subreport.dlex"))
+                    Dim layoutData As New LayoutData(jsonData)
+                    Dim document As Document = layoutReport.Layout(layoutData)
+                    document.Draw(Util.GetPath("Output/subreport-forjson-json-layout-data-output.pdf"))
+                End Using
+            End Using
+        End Sub
+        Public Shared Sub GenerateSubreportUsingDataObjects()
+            Dim layoutReport As New DocumentLayout(Util.GetPath("Resources/DLEXs/subreport.dlex"))
+            Dim layoutData As New NameValueLayoutData()
+            Dim productCategoryData As List(Of ProductCategory) = GetProductCategoryObjects()
+            layoutData.Add("ProductsByCategory", productCategoryData)
+            Dim document As Document = layoutReport.Layout(layoutData)
+            document.Draw(Util.GetPath("Output/subreport-dataobject-layout-data-output.pdf"))
+        End Sub
+        Public Shared Sub GenerateSubReportUsingJson()
+            Dim data As String = File.ReadAllText(Util.GetPath("Resources/Data/subreport.json"))
+            Dim jsonData As Object = JsonConvert.DeserializeObject(data)
+
+            Dim layoutReport As New DocumentLayout(Util.GetPath("Resources/DLEXs/subreport.dlex"))
+            Dim layoutData As New LayoutData(jsonData)
+            Dim document As Document = layoutReport.Layout(layoutData)
+            document.Draw(Util.GetPath("Output/subreport-json-layout-data-output.pdf"))
         End Sub
         Public Shared Sub GenerateTopLevelExample()
             Dim layoutReport As New DocumentLayout(Util.GetPath("Resources/DLEXs/form-fill.dlex"))

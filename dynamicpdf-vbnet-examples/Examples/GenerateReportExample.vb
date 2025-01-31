@@ -25,6 +25,34 @@ Namespace DynamicPDFCoreSuite.Examples
             GenerateSubreportUsingDataObjects()
             GenerateSubReportUsingSqlJson()
             GenerateSubReportUsingSqlEvent()
+            GenerateUsingDatabaseAndJson()
+        End Sub
+        Public Shared Sub GenerateUsingDatabaseAndJson()
+            Dim queryWithForJson As String = "SELECT ProductID, ProductName, QuantityPerUnit, UnitPrice FROM Products FOR JSON AUTO, ROOT('Products')"
+
+            Using conn As New SqlConnection(CONNECTION_STRING)
+                Using cmd As New SqlCommand(queryWithForJson, conn)
+                    conn.Open()
+                    Dim jsonResult As New StringBuilder()
+                    Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+                    If Not reader.HasRows Then
+                        jsonResult.Append("[]")
+                    Else
+                        While reader.Read()
+                            jsonResult.Append(reader.GetValue(0).ToString())
+                        End While
+                    End If
+
+                    Dim jsonData = JsonConvert.DeserializeObject(jsonResult.ToString())
+                    Dim layoutReport As New DocumentLayout(Util.GetPath("Resources/DLEXs/report-with-cover-page.dlex"))
+                    Dim layoutData As New LayoutData(jsonData)
+                    layoutData.Add("ReportCreatedFor", "John Doe")
+
+                    Dim document As Document = layoutReport.Layout(layoutData)
+                    document.Draw(Util.GetPath("Output/report-forjson-json-layout-data-output.pdf"))
+                End Using
+            End Using
         End Sub
         Public Shared Sub GenerateSubReportUsingSqlEvent()
             Dim documentLayout As New DocumentLayout(Util.GetPath("Resources/DLEXs/subreport.dlex"))

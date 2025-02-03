@@ -30,6 +30,7 @@ namespace DynamicPDFCoreSuite.Examples
             GenerateSubReportUsingSqlJson();
             GenerateSubReportUsingSqlEvent();
             GenerateTopLevelExample();
+            GenerateUsingEnumeration();
         }
 
 
@@ -275,5 +276,25 @@ namespace DynamicPDFCoreSuite.Examples
 
             document.Draw(Util.GetPath("Output/toplevel-noobject-layoutdata.pdf"));
         }
+
+        public static void GenerateUsingEnumeration()
+        {
+            DocumentLayout layoutReport = new DocumentLayout(Util.GetPath("Resources/DLEXs/report-with-cover-page.dlex"));
+
+            Products products = new Products();
+
+            EnumerableReportData enumData = new(products);
+
+
+            LayoutData layoutData = new();
+            layoutData.Add("Products", enumData);
+            layoutData.Add("ReportCreatedFor", "Alex Smith");
+
+            Document document = layoutReport.Layout(layoutData);
+            document.Author = "DynamicPDF ReportWriter";
+            document.Title = "Simple Report Example";
+            document.Draw(Util.GetPath("Output/report-enumeration-layout-data-output.pdf"));
+        }
+
     }
 }

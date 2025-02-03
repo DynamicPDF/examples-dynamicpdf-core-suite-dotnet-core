@@ -26,6 +26,23 @@ Namespace DynamicPDFCoreSuite.Examples
             GenerateSubReportUsingSqlJson()
             GenerateSubReportUsingSqlEvent()
             GenerateUsingDatabaseAndJson()
+            GenerateUsingEnumeration()
+        End Sub
+        Public Shared Sub GenerateUsingEnumeration()
+            Dim layoutReport As DocumentLayout = New DocumentLayout(Util.GetPath("Resources/DLEXs/report-with-cover-page.dlex"))
+
+            Dim products As Products = New Products()
+
+            Dim enumData As EnumerableReportData = New EnumerableReportData(products)
+
+            Dim layoutData As LayoutData = New LayoutData()
+            layoutData.Add("Products", enumData)
+            layoutData.Add("ReportCreatedFor", "Alex Smith")
+
+            Dim document As Document = layoutReport.Layout(layoutData)
+            document.Author = "DynamicPDF ReportWriter"
+            document.Title = "Simple Report Example"
+            document.Draw(Util.GetPath("Output/report-enumeration-layout-data-output.pdf"))
         End Sub
         Public Shared Sub GenerateUsingDatabaseAndJson()
             Dim queryWithForJson As String = "SELECT ProductID, ProductName, QuantityPerUnit, UnitPrice FROM Products FOR JSON AUTO, ROOT('Products')"

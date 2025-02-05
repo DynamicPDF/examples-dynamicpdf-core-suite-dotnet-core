@@ -1,0 +1,15 @@
+<document version="2.0" xsi:schemaLocation="http://www.dynamicpdf.com http://www.dynamicpdf.com/schemas/DLEX12.xsd" xmlns="http://www.dynamicpdf.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SimpleReport" author="" keywords="" title="" subject="">
+	<report dataName="Websites" id="Report1">
+		<template id="Template1"/>
+		<header height="18" id="Header">
+			<recordBox font="HelveticaBold" id="DateRecordBox" x="257" y="0" width="255" height="14" align="right" dataFormat="d MMM yyyy h:mm:ss tt" dataName="CurrentDateTime()"/>
+			<recordBox fontSize="12" font="HelveticaBold" id="RecordBox4" x="0" y="0" width="255" height="14" dataFormat="" dataName="HeaderData"/></header>
+		<detail height="64" id="Body">
+			<recordBox font="HelveticaBold" fontSize="16" id="RecordBox2" x="60" y="7" width="450" height="19" leading="19" dataFormat="" dataName="Name"/>
+			<recordBox id="RecordBox3" x="60" y="28" width="450" height="29.5" dataFormat="" dataName="Description"/>
+			<placeholder id="Barcode" x="3" y="7" width="50" height="50"/></detail>
+		<footer height="18" id="Footer">
+			<pageNumberingLabel font="HelveticaBold" fontSize="12" id="PageNumberingLabel1" x="0" y="0" width="512" height="18" align="center" vAlign="bottom" text="Page %%CP%% of %%TP%%"/>
+		</footer>
+	</report>
+</document>

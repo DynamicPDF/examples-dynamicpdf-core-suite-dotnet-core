@@ -9,6 +9,7 @@ namespace DynamicPDFCoreSuite
         {
 
             Util.CreatePath("Output");
+
             AddExistingContent.Run();
             AddNewContentExample.Run();
             AcroFormFilling.Run();
@@ -65,6 +66,7 @@ namespace DynamicPDFCoreSuite
             JavaScriptExample.Run();
             LayoutEngineExample.Run();
             LayoutGridExample.Run();
+            LayoutEventsExample.Run();
             LineChartsExample.Run();
             ListContinuationExample.Run();
             ListsExample.Run();
@@ -97,7 +99,7 @@ namespace DynamicPDFCoreSuite
             TiffToPDF.Run();
             WatermarkExample.Run();
             XmpMetadataExample.Run();
-            XYScatterChartExample.Run();
+            XYScatterChartExample.Run(); 
         }
     }
 }

@@ -14,8 +14,13 @@ namespace DynamicPDFCoreSuite.Utility
 
         public static string GenerateLargeTextDoc()
         {
+            return GenerateLargeTextDoc(10);
+        } 
+
+            public static string GenerateLargeTextDoc(int repeats)
+        {
             string txtData = File.ReadAllText(Util.GetPath("Resources/Data/simple.txt"));
-            for (int i = 0; i < 10; i++) txtData += txtData;
+            for (int i = 0; i < repeats; i++) txtData += txtData;
             return txtData.Replace("\\n", Environment.NewLine).Replace("  ", " ");
         }
     }

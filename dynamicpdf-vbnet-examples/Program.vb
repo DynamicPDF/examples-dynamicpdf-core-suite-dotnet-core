@@ -11,6 +11,7 @@ Module Program
         AddExistingContent.Run()
         AddNewContentExample.Run()
         AreaChartExample.Run()
+        AutolayoutExample.Run()
         BarcodeExample.Run()
         BarChartsExample.Run()
         BookmarkOutlineExample.Run()

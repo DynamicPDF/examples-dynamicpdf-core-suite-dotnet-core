@@ -13,6 +13,7 @@ namespace DynamicPDFCoreSuite
             AddExistingContent.Run();
              AddNewContentExample.Run();
              AcroFormFilling.Run();
+            AcroFormFillingMerge.Run();
              Actions.Run();
              AddImageExample.Run();
              AddFormFieldsExample.Run();

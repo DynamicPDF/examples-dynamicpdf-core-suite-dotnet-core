@@ -9,6 +9,7 @@ Module Program
         Console.WriteLine(AppContext.BaseDirectory)
         Util.CreateOutput()
         AcroFormFilling.Run()
+        AcroFormFillingMerge.Run()
         AddExistingContent.Run()
         AddNewContentExample.Run()
         AreaChartExample.Run()

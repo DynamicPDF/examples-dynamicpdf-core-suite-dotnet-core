@@ -11,6 +11,7 @@ Module Program
         AcroFormFilling.Run()
         AcroFormFillingMerge.Run()
         AddExistingContent.Run()
+        AddFormFieldsExample.Run()
         AddNewContentExample.Run()
         AreaChartExample.Run()
         AutolayoutExample.Run()

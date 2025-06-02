@@ -16,6 +16,7 @@ namespace DynamicPDFCoreSuite.Examples
             ExampleThree();
             ExampleFive();
             ExampleSix();
+            ExampleSeven();
         }
 
         public static void ExampleOne()
@@ -213,6 +214,54 @@ namespace DynamicPDFCoreSuite.Examples
 
             page.Elements.Add(chart);
             document.Draw(Util.GetPath("Output/chart-six-output.pdf"));
+        }
+
+        public static void ExampleSeven()
+        {
+            // Create a PDF Document
+            Document document = new Document();
+            // Create a Page and add it to the document
+            Page page = new Page();
+            document.Pages.Add(page);
+
+            // Create a chart
+            Chart chart = new Chart(0, 0, 400, 230);
+            // Create a plot area
+            PlotArea plotArea = chart.PrimaryPlotArea;
+
+            // Create header titles and add it to the chart
+            Title title1 = new Title("Website Visitors");
+            Title title2 = new Title("Year - 2007");
+            chart.HeaderTitles.Add(title1);
+            chart.HeaderTitles.Add(title2);
+
+            // Create a indexed line series and add values to it
+            IndexedLineSeries lineSeries1 = new IndexedLineSeries("Website A");
+            lineSeries1.Values.Add(new float[] { 5, 7, 9, 6 });
+            IndexedLineSeries lineSeries2 = new IndexedLineSeries("Website B");
+            lineSeries2.Values.Add(new float[] { 4, 2, 5, 8 });
+            IndexedLineSeries lineSeries3 = new IndexedLineSeries("Website C");
+            lineSeries3.Values.Add(new float[] { 2, 4, 6, 9 });
+
+            // Add indexed line series to the plot area
+            plotArea.Series.Add(lineSeries1);
+            plotArea.Series.Add(lineSeries2);
+            plotArea.Series.Add(lineSeries3);
+
+            // Create a title and add it to the yaxis
+            Title lTitle = new Title("Visitors (in millions)");
+            lineSeries1.YAxis.Titles.Add(lTitle);
+
+            //Adding AxisLabels to the XAxis
+            lineSeries1.XAxis.Labels.Add(new IndexedXAxisLabel("Q1", 0));
+            lineSeries1.XAxis.Labels.Add(new IndexedXAxisLabel("Q2", 1));
+            lineSeries1.XAxis.Labels.Add(new IndexedXAxisLabel("Q3", 2));
+            lineSeries1.XAxis.Labels.Add(new IndexedXAxisLabel("Q4", 3));
+
+            // Add the chart to the page
+            page.Elements.Add(chart);
+            // Save the PDF
+            document.Draw(Util.GetPath("Output/chart-seven-output.pdf"));
         }
 
     }

@@ -3,7 +3,7 @@ using ceTe.DynamicPDF.PageElements.Forms;
 
 namespace DynamicPDFCoreSuite.Examples
 {
-    class AnnotationsExample
+    class AnnotationShowHideActionExample
     {
         public static void Run()
         {

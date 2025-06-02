@@ -21,7 +21,7 @@ namespace DynamicPDFCoreSuite
              AddShapeExample.Run();
              AddSignatureExample.Run();
              AddTemplateExample.Run();
-             AnnotationsExample.Run();
+             AnnotationShowHideActionExample.Run();
              AreaChartExample.Run();
              AutolayoutExample.Run();
              BarChartsExample.Run();

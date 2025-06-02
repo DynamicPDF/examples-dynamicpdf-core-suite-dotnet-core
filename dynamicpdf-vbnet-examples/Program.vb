@@ -57,6 +57,7 @@ Module Program
         MergePdfExample.Run()
         FormFdfExample.Run()
         PagesExample.Run()
+        PageNumbers.Run()
         PdfUaExample.Run()
         PdfXCompatibleExample.Run()
         PdfACompatibleExample.Run()

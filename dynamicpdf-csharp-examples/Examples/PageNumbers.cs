@@ -11,6 +11,7 @@ namespace DynamicPDFCoreSuite.Examples
             Merger();
             Generator();
         }
+
         public static void Merger()
         {
             MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/DocumentA.pdf"));

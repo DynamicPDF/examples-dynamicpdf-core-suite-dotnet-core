@@ -73,6 +73,7 @@ Module Program
         TableExample.Run()
         TableContinuationExample.Run()
         TemplateExample.Run()
+        WatermarkExample.Run()
         XmpMetadataExample.Run()
     End Sub
 End Module

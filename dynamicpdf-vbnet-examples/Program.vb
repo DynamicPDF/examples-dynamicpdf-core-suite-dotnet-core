@@ -29,6 +29,7 @@ Module Program
         ChartTwoDiffPlotAreasExample.Run()
         ColorsExample.Run()
         ColumnChartExample.Run()
+        CombinePDFs.Run()
         CreatePDF.Run()
         CustomPageElementExample.Run()
         DigitalSignatureExample.Run()

@@ -6,16 +6,16 @@ Imports ceTe.DynamicPDF.PageElements.Charting.Series
 
 Class ChartsExample
 
-        Public Shared Sub Run()
-            ExampleOne()
-            ExampleTwo()
-            ExampleThree()
-            ExampleFive()
+    Public Shared Sub Run()
+        ExampleOne()
+        ExampleTwo()
+        ExampleThree()
+        ExampleFive()
         ExampleSix()
         ExampleSeven()
     End Sub
 
-        Public Shared Sub ExampleOne()
+    Public Shared Sub ExampleOne()
             Dim document As New Document()
             Dim page As New Page()
             document.Pages.Add(page)

@@ -13,6 +13,7 @@ namespace DynamicPDFCoreSuite.Examples
             ImageWaterMarkExample();
             TextWatermarkExample();
             TemplateWatermarkExample();
+            TemplateNewDocWatermarkExample();
         }
 
         public static void ImageWaterMarkExample()
@@ -26,6 +27,19 @@ namespace DynamicPDFCoreSuite.Examples
             page.Elements.Add(imageWm);
             document.Draw(Util.GetPath("Output/imagewatermark-output.pdf"));
         }
+
+        public static void TemplateNewDocWatermarkExample()
+        {
+            Document document = new Document();
+            document.Pages.Add(new Page(PageSize.Letter));
+            document.Pages.Add(new Page(PageSize.Letter));
+            Image image = new Image(Util.GetPath("Resources/Images/stamp.png"), 0, 0);
+            Template watermarkTemplate = new Template();
+            watermarkTemplate.Elements.Add(image);
+            document.Template = watermarkTemplate;
+            document.Draw(Util.GetPath("Output/templatewatermark-newdoc-output.pdf"));
+        }
+
 
         public static void TextWatermarkExample()
         {

@@ -8,7 +8,24 @@ Class WatermarkExample
         ImageWaterMarkExample()
         TextWatermarkExample()
         TemplateWatermarkExample()
+        TemplateNewDocWatermarkExample()
     End Sub
+
+    Public Shared Sub TemplateNewDocWatermarkExample()
+        Dim document As New Document()
+        document.Pages.Add(New Page(PageSize.Letter))
+        document.Pages.Add(New Page(PageSize.Letter))
+
+        Dim image As New Image(Util.GetPath("Resources/Images/stamp.png"), 0, 0)
+
+        Dim watermarkTemplate As New Template()
+        watermarkTemplate.Elements.Add(image)
+
+        document.Template = watermarkTemplate
+
+        document.Draw(Util.GetPath("Output/templatewatermark-newdoc-output.pdf"))
+    End Sub
+
 
     Public Shared Sub ImageWaterMarkExample()
         Dim document As New Document()

@@ -8,9 +8,27 @@ namespace DynamicPDFCoreSuite.Examples
     {
         public static void Run()
         {
+            Simple();
+            One();
+        }
+
+        public static void Simple()
+        {
+            Document document = new Document();
+            Page page = new Page();
+            document.Pages.Add(page);
+            Template template = new Template();
+            template.Elements.Add(new Label("Header", 0, 0, 200, 12));
+            template.Elements.Add(new Image(Util.GetPath("Resources/Images/DPDFLogo.png"), 100, 0));
+            document.Template = template;
+            document.Draw(Util.GetPath("Output/template-out.pdf"));
+        }
+
+        public static void One()
+        {
             Document doc = new();
             Template tmp = new();
-            
+
             doc.Pages.Add(new Page());
             doc.Pages.Add(new Page());
 
@@ -27,5 +45,6 @@ namespace DynamicPDFCoreSuite.Examples
 
             doc.Draw(Util.GetPath("Output/addtemplatetopdf-out.pdf"));
         }
+
     }
 }

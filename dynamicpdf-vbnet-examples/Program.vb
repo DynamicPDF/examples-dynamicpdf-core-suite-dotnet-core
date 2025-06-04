@@ -73,6 +73,7 @@ Module Program
         TableExample.Run()
         TableContinuationExample.Run()
         TemplateExample.Run()
+        TextEncodingExample.Run()
         TiffToPDF.Run()
         WatermarkExample.Run()
         XmpMetadataExample.Run()

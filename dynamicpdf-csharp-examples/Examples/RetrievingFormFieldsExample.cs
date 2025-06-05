@@ -11,15 +11,14 @@ namespace DynamicPDFCoreSuite.Examples
             PdfDocument pdfDocument = new PdfDocument(Util.GetPath("Resources/PDFs/form-example.pdf"));
             MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/form-example.pdf"));
             Page page = document.Pages[0];
-            
+
             float x = pdfDocument.Form.Fields["check_box_nm"].GetX(page);
             float y = pdfDocument.Form.Fields["check_box_nm"].GetY(page);
-            float y2 = pdfDocument.Form.Fields["text_field_name"].GetY(page) + pdfDocument.Form.Fields["text_field_name"].Height;
-
-            Rectangle rec = new Rectangle(x, y, 200, y2 - y);
-            rec.FillColor = RgbColor.LightBlue;
-            rec.BorderColor = RgbColor.Navy;
-            page.Elements.Add(rec);
+            float height = pdfDocument.Form.Fields["check_box_nm"].Height;
+            float width = pdfDocument.Form.Fields["check_box_nm"].Width;
+            string txt = "(" + x + ", " + y + ", " + width + ", " + height + ")";
+            Label label = new Label(txt, x + width + 10, y, 100, 20);
+            page.Elements.Add(label);
             document.Draw(Util.GetPath("Output/retrieve-form-field-dimensions-example-output.pdf"));
         }
     }

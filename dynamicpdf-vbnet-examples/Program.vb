@@ -52,6 +52,7 @@ Module Program
         HtmlAreaExample.Run()
         HtmlLayoutExample.Run()
         Image3dExample.Run()
+        ImageStampExample.Run()
         InteractiveFormsExample.Run()
         JavaScriptExample.Run()
         LayoutEventsExample.Run()

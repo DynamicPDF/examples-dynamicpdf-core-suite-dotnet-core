@@ -1,6 +1,4 @@
-﻿
-
-using ceTe.DynamicPDF;
+﻿using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements;
 
 namespace DynamicPDFCoreSuite.Examples
@@ -10,6 +8,8 @@ namespace DynamicPDFCoreSuite.Examples
         public static void Run()
         {
             AddCircle();
+            AddRectangle();
+            AddLine();
             AddPath();
         }
 
@@ -21,12 +21,36 @@ namespace DynamicPDFCoreSuite.Examples
             document.Pages.Add(page);
 
             Circle circle1 = new Circle(100, 100, 50, 100, Grayscale.Black, RgbColor.OrangeRed, 2, LineStyle.Solid);
-            Circle circle2 = new Circle(150, 75, 50, 50, Grayscale.Black, RgbColor.Lime, 2, LineStyle.Solid);
 
             page.Elements.Add(circle1);
-            page.Elements.Add(circle2);
 
             document.Draw(Util.GetPath("Output/circle-output.pdf"));
+        }
+
+        public static void AddRectangle()
+        {
+            Document document = new Document();
+
+            Page page = new Page();
+            document.Pages.Add(page);
+
+            Rectangle rectangle = new Rectangle(10, 10, 400, 300, RgbColor.Red, RgbColor.Navy);
+            page.Elements.Add(rectangle);
+
+            document.Draw(Util.GetPath("Output/rectangle-output.pdf"));
+        }
+
+        public static void AddLine()
+        {
+            Document document = new();
+            Page page = new Page();
+            document.Pages.Add(page);
+            Line line = new(150, 0, 150, 300);
+            line.Color = RgbColor.Navy;
+            line.Width = 10;
+            line.Cap = LineCap.Butt;
+            page.Elements.Add(line);
+            document.Draw(Util.GetPath("Output/line-output.pdf"));
         }
 
         public static void AddPath()

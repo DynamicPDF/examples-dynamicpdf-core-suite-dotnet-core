@@ -70,6 +70,7 @@ Module Program
         PieChartsExample.Run()
         ReadFormFieldsExample.Run()
         RetrievingFormFieldsExample.Run()
+        ShapesExample.Run()
         SplitPdfExample.Run()
         StampTemplateExample.Run()
         TextContinuationExample.Run()

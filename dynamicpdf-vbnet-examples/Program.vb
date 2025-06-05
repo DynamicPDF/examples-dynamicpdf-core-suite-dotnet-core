@@ -14,6 +14,7 @@ Module Program
         AddFormFieldsExample.Run()
         AddImageExample.Run()
         AddNewContentExample.Run()
+        AddShapeExample.Run()
         AddSignatureExample.Run()
         AnnotationShowHideActionExample.Run()
         AreaChartExample.Run()

@@ -72,6 +72,7 @@ Module Program
         TextContinuationExample.Run()
         TableExample.Run()
         TableContinuationExample.Run()
+        TaggedPdfExample.Run()
         TemplateExample.Run()
         TextEncodingExample.Run()
         TextFormattingExample.Run()

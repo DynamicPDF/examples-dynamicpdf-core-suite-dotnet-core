@@ -69,6 +69,7 @@ Module Program
         PdfACompatibleExample.Run()
         PieChartsExample.Run()
         ReadFormFieldsExample.Run()
+        RemovingFormFieldsExample.Run()
         RetrievingFormFieldsExample.Run()
         SectionsExample.Run()
         ShapesExample.Run()

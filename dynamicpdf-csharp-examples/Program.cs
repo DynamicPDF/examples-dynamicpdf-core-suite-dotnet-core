@@ -87,6 +87,7 @@ namespace DynamicPDFCoreSuite
              PieChartsExample.Run();
              ReaderEventExample.Run();
              ReadFormFieldsExample.Run();
+            RemovingFormFieldsExample.Run();
              RetrievingFormFieldsExample.Run();
              SectionsExample.Run();
             ShapesExample.Run();

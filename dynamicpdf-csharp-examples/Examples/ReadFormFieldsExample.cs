@@ -1,6 +1,6 @@
 ﻿using ceTe.DynamicPDF.Forms;
 using ceTe.DynamicPDF.Merger;
-using System;
+using System.IO;
 
 namespace DynamicPDFCoreSuite.Examples
 {
@@ -10,14 +10,15 @@ namespace DynamicPDFCoreSuite.Examples
         public static void Run()
         {
             MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/AllFormFields.pdf"));
-
             FormFieldList list = document.Form.Fields;
+            string output = "Field values\n";
 
             for (int i = 0; i < list.Count; i++)
             {
-                Console.WriteLine("name: " + list[i].FullName + " value: " + list[i].Value);
+                output += "name: " + list[i].FullName + " value: " + list[i].Value + "\n";
             }
 
+            File.WriteAllText(Util.GetPath("Output/read-form-fields-output.txt"), output);
         }
     }
 }

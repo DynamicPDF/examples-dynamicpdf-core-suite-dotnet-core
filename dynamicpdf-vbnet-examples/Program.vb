@@ -68,6 +68,7 @@ Module Program
         PdfXCompatibleExample.Run()
         PdfACompatibleExample.Run()
         PieChartsExample.Run()
+        ReaderEventExample.Run()
         ReadFormFieldsExample.Run()
         RemovingFormFieldsExample.Run()
         RetrievingFormFieldsExample.Run()

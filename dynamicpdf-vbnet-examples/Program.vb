@@ -64,6 +64,7 @@ Module Program
         FormFdfExample.Run()
         PagesExample.Run()
         PageNumbers.Run()
+        PasswordProtectPDF.Run()
         PdfUaExample.Run()
         PdfXCompatibleExample.Run()
         PdfACompatibleExample.Run()

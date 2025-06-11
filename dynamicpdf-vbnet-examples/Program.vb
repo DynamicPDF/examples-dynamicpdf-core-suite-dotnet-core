@@ -62,6 +62,7 @@ Module Program
         ListContinuationExample.Run()
         MergePdfExample.Run()
         FormFdfExample.Run()
+        PageLinkExample.Run()
         PagesExample.Run()
         PageNumbers.Run()
         PasswordProtectPDF.Run()

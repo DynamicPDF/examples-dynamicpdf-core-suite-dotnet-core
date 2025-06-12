@@ -51,18 +51,23 @@ namespace DynamicPDFCoreSuite.Examples
 
             Label label1 = new Label("Please Enter your Date of Birth :", 50, 50, 200, 50);
             TextField textField1 = new TextField("dob", 270, 50, 100, 50);
-            textField1.ReaderEvents.OnBlur = new JavaScriptAction(" var no = this.getField(\"dob\").value; var temp = Math.abs(new Date(Date.now()).getTime() - new Date(no).getTime()); var days = Math.ceil(temp / (1000 * 3600 * 24));this.getField(\"age\").value = Math.floor(days/365); ");
-            page.Elements.Add(label1);
-            page.Elements.Add(textField1);
             Label label2 = new Label("Your Age is :", 50, 120, 100, 50);
             TextField textField2 = new TextField("age", 270, 120, 100, 50);
+
+            string javaScriptString = " var no = this.getField(\"dob\").value; var temp = Math.abs(new Date(Date.now()).getTime() - new Date(no).getTime()); var days = Math.ceil(temp / (1000 * 3600 * 24));this.getField(\"age\").value = Math.floor(days/365); ";
+
+            textField1.ReaderEvents.OnBlur = new JavaScriptAction(javaScriptString);
+            page.Elements.Add(label1);
+            page.Elements.Add(textField1);
+            
             page.Elements.Add(label2);
             page.Elements.Add(textField2);
 
             document.Draw(Util.GetPath("Output/javascript-auto-fillable-output.pdf"));
         }
 
-        public static void ValidationExample()
+
+        public static void FormattingExample()
         {
             Document document = new Document();
             Page page = new Page();
@@ -70,14 +75,17 @@ namespace DynamicPDFCoreSuite.Examples
 
             Label label1 = new Label("Please Enter a Number :", 50, 50, 200, 50);
             TextField textField1 = new TextField("number", 270, 50, 100, 50);
-            textField1.ReaderEvents.OnBlur = new JavaScriptAction("var no = this.getField(\"number\").value; this.getField(\"number\").value = no.toFixed(2); ");
+
+            string js = "var no = this.getField('number').value; this.getField('number').value = no.toFixed(2);";
+
+            textField1.ReaderEvents.OnBlur = new JavaScriptAction(js);
             page.Elements.Add(label1);
             page.Elements.Add(textField1);
 
-            document.Draw(Util.GetPath("Output/javascript-validation-output.pdf"));
+            document.Draw(Util.GetPath("Output/javascript-simple-formatting-output.pdf"));
         }
 
-        public static void FormattingExample()
+        public static void ValidationExample()
         {
             Document document = new Document();
             Page page = new Page();
@@ -91,7 +99,7 @@ namespace DynamicPDFCoreSuite.Examples
             page.Elements.Add(textField);
             page.Elements.Add(label);
 
-            document.Draw(Util.GetPath("Output/javascript-fomatting-output.pdf"));
+            document.Draw(Util.GetPath("Output/javascript-validation-output.pdf"));
         }
 
 

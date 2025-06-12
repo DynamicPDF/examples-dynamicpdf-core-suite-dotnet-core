@@ -95,7 +95,8 @@ namespace DynamicPDFCoreSuite.Examples
            TextField textField = new TextField("txt", 170, 30, 150, 30);
             textField.DefaultValue = "0";
             textField.ToolTip = "Enter only Numbers";
-            textField.ReaderEvents.OnBlur = new JavaScriptAction(" var no = this.getField(\"txt\").value; if( isNaN(no)) { app.alert(\"Please Enter number in the text field\"); } ");
+            string jsString = " var no = this.getField(\"txt\").value; if( isNaN(no)) { app.alert(\"Please Enter number in the text field\"); } ";
+            textField.ReaderEvents.OnBlur = new JavaScriptAction(jsString);
             page.Elements.Add(textField);
             page.Elements.Add(label);
 

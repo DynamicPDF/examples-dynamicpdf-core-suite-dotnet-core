@@ -34,6 +34,7 @@ Module Program
         CreatePDF.Run()
         CustomPageElementExample.Run()
         DigitalSignatureExample.Run()
+        DiskBufferingExample.Run()
         DocumentSectioningExample.Run()
         EncryptPDF.Run()
         EvenOddTemplateExample.Run()

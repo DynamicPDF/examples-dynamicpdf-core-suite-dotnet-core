@@ -56,6 +56,7 @@ Module Program
         ImageStampExample.Run()
         InteractiveFormsExample.Run()
         JavaScriptExample.Run()
+        LayoutGridExample.Run()
         LayoutEventsExample.Run()
         LineChartsExample.Run()
         ListsExample.Run()

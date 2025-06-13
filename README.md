@@ -1,14 +1,14 @@
 ![DynamicPDF Core Suite for .NET examples in C# and VB.NET](./logo-small.png)
 
-This project contains the DynamicPDF Core Suite for .NET Core C# console examples and VB.NET console examples from the DynamicPDF Core Suite Documentation.
+This project contains the DynamicPDF Core Suite for .NET C# console examples and VB.NET console examples from the [DynamicPDF Core Suite Documentation](https://www.dynamicpdf.com/docs/dotnet/dynamic-pdf-core-suite-welcome).
 
-There are two projects in the solution.
+There are two projects in the solution:
 
-* dynamicpdf-csharp-examples containing the C# examples
-* dynamicpdf-vbnet-examples containing the vb examples.
+* `dynamicpdf-csharp-examples` containing the C# examples
+* `dynamicpdf-vbnet-examples` containing the VB.NET examples.
 
 ## Example Files
-The example files are located in the Examples folder of each respective project.
+The source code example files are located in the Examples folder of each respective project.
 
 ## Output PDF Files
 Output PDFs are placed in the Output folder of each respective project.

@@ -21,15 +21,15 @@ Get started easily by installing DynamicPDF Core Suite for .NET through NuGet or
 
 ### NuGet Package
 
-The easiest way to install DynamicPDF Core Suite is by obtaining the NuGet package using Visual Studio's Package Manager. You can also obtain the NuGet package by downloading it directly. Refer to the [installation documentation](/docs/dotnet/dynamic-pdf-referencing-assembly-and-deployment "Referencing the Assembly and Deployment") for more information.
+The easiest way to install DynamicPDF Core Suite is by obtaining the NuGet package using Visual Studio's Package Manager. You can also obtain the NuGet package by downloading it directly. Refer to the [installation documentation](https://www.dynamicpdf.com/docs/dotnet/dynamic-pdf-referencing-assembly-and-deployment "Referencing the Assembly and Deployment") for more information.
 
-{!nuget-button{packageid:"ceTe.DynamicPDF.CoreSuite.NET"}!}
+* NuGet - https://www.nuget.org/packages/ceTe.DynamicPDF.CoreSuite.NET
 
 ### DynamicPDF Core Suite Information
 DynamicPDF Core Suite for .NET combines creating, merging, and visual report creation into one powerful product for creating PDF documents. It is ideal for anyone who needs to generate PDF documents or reports or work with existing PDFs in their applications. With a free Evaluation Edition to try and with flexible and royalty-free licensing options, why not start using DynamicPDF Core Suite for .NET today!
 
 * [DynamicPDF Core Suite for .NET Product Page](https://www.dynamicpdf.com/PDF-Suite-.NET.aspx "DynamicPDF Core Suite")
-* [DynamicPDF Core Suite for .NET Documentation](/docs/dotnet/dynamic-pdf-core-suite-welcome "Create PDFs in .NET Core")
+* [DynamicPDF Core Suite for .NET Documentation](https://www.dynamicpdf.com/docs/dotnet/dynamic-pdf-core-suite-welcome "Create PDFs in .NET Core")
 
 ## <a id="OtherPlatforms"></a>Available on Other Platforms
 DynamicPDF Core Suite is also available for the  Java and COM/ActiveX platforms. Refer to the respective product pages for more details.

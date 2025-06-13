@@ -1,4 +1,7 @@
+<img src="./logo-small.png" align="left">
+
 # DynamicPDF Core Suite for .NET Examples
+
 This project contains the DynamicPDF Core Suite for .NET Core C# console examples and VB.NET console examples from the DynamicPDF Core Suite Documentation.
 
 There are two projects in the solution.

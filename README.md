@@ -1,4 +1,4 @@
-<img src="./logo-small.png" align="center">
+<img src="./logo-small.png" align="left">
 
 # DynamicPDF Core Suite for .NET Examples
 

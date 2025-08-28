@@ -51,6 +51,7 @@ Module Program
         GridLinesExample.Run()
         GroupingExample.Run()
         HeaderFooterTemplateExample.Run()
+        HtmlToPdf.Run()
         HtmlAreaExample.Run()
         HtmlLayoutExample.Run()
         Image3dExample.Run()

@@ -1,30 +1,19 @@
-﻿using ceTe.DynamicPDF;
+﻿
+using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.Merger;
 using ceTe.DynamicPDF.PageElements;
 
 namespace DynamicPDFCoreSuite.Examples
 {
-    class PageNumbers
+    public class PageNumbers
     {
         public static void Run()
         {
-            Merger();
-            Generator();
+            CreatePdf();
+            MergePdf();
         }
 
-        public static void Merger()
-        {
-            MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/DocumentA.pdf"));
-
-            Template template = new Template();
-            PageNumberingLabel pageLabels = new PageNumberingLabel("%%CP%% of %%TP%%", 0, 0, 200, 20);
-            template.Elements.Add(pageLabels);
-            document.Template = template;
-
-            document.Draw(Util.GetPath("Output/AddPageNumberToExistingPDF.pdf"));
-        }
-
-        public static void Generator()
+        public static void CreatePdf()
         {
             Document document = new Document();
             Template documentTemplate = new Template();
@@ -34,22 +23,36 @@ namespace DynamicPDFCoreSuite.Examples
 
             document.Sections.Begin(NumberingStyle.RomanLowerCase);
 
-            document.Pages.Add(new Page()); //Page 1
-            document.Pages.Add(new Page()); //Page 2
-            document.Pages.Add(new Page()); //Page 3
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
 
             document.Sections.Begin(NumberingStyle.Numeric);
 
-            document.Pages.Add(new Page()); //Page 4
-            document.Pages.Add(new Page()); //page 5
-            document.Pages.Add(new Page()); //page 6
-            document.Pages.Add(new Page()); //page 7
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
 
             document.Sections.Begin(NumberingStyle.RomanLowerCase, "Appendix A - ");
-            document.Pages.Add(new Page()); //page 8
-            document.Pages.Add(new Page()); //page 9
 
-            document.Draw(Util.GetPath("Output/AddPageNumberToNewPDF.pdf"));
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
+
+            document.Draw(Util.GetPath("Output/AddPageNumbersToNewPdf.pdf"));
+
+
         }
+
+        public static void MergePdf()
+        {
+            MergeDocument document = new MergeDocument(Util.GetPath("Resources/PDFs/DocumentA.pdf"));
+            Template template = new Template();
+            PageNumberingLabel pageLabel = new PageNumberingLabel("%%CP%% of %%TP%%", 0, 0, 200, 20);
+            template.Elements.Add(pageLabel);
+            document.Template = template;
+            document.Draw(Util.GetPath("Output/AddPageNumbersToExistingPdf.pdf"));
+        }
+
     }
 }

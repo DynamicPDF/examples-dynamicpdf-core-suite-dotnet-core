@@ -1,4 +1,5 @@
-﻿using ceTe.DynamicPDF;
+﻿
+using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements;
 
 namespace DynamicPDFCoreSuite.Examples
@@ -9,22 +10,20 @@ namespace DynamicPDFCoreSuite.Examples
         {
             Document document = new Document();
             Template template = new Template();
-            template.Elements.Add(new PageNumberingLabel("%%SP%% of %%ST%%", 0, 680, 512, 12, Font.Helvetica, 12, TextAlign.Center));
-
-            document.Sections.Begin(NumberingStyle.RomanLowerCase);
-            document.Pages.Add(new Page()); //Page 1
-            document.Pages.Add(new Page()); //Page 2
-
+            template.Elements.Add(new PageNumberingLabel("%%SP%% of %%ST%%", 0, 680, 512, 12, Font.Helvetica, 32, TextAlign.Center));
             document.Sections.Begin(NumberingStyle.Numeric, template);
-            document.Pages.Add(new Page()); //Page 3
-            document.Pages.Add(new Page()); //page 4
-            document.Pages.Add(new Page()); //page 5
-
-            document.Sections.Begin(NumberingStyle.RomanLowerCase, "Appendix A - ");
-            document.Pages.Add(new Page()); //page 6
-            document.Pages.Add(new Page()); //page 7
-
+            document.Pages.Add(new Page());
+            document.Sections.Begin(NumberingStyle.AlphabeticUpperCase, template);
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
+            document.Sections.Begin(NumberingStyle.RomanUpperCase, template);
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
+            document.Pages.Add(new Page());
+            document.Pages[3].ApplySectionTemplate = false;
             document.Draw(Util.GetPath("Output/sections-output.pdf"));
         }
+
     }
 }
